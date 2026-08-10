@@ -766,25 +766,29 @@
         </div>
     </section>
 
-    <!-- ===== 页脚 ===== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-copy">
-                    <span class="copyright">© 2026 苏州高新区第一中学科技城校机器人社团</span>
-                </div>
-                <div class="footer-links">
-                    <a href="#">邮箱</a>
-                </div>
+<!-- ===== 页脚 ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-copy">
+                <span class="copyright">© 2026 苏州高新区第一中学科技城校机器人社团</span>
             </div>
-            <div class="footer-bottom">
-                <p>本网站代码版权归社团所有，未经授权不得转载或商用。</p>
-                <p style="margin-top:0.5rem;">Built with ❤️ by 新一科机器人社</p>
-                <p><a href="log.html" style="color:#94a3b8;text-decoration:underline;">更新日志</a></p>
+            <div class="footer-links">
+                <span>📧 邮箱：</span>
+                <a href="mailto:3999679973@qq.com" style="color:#cbd5e1;transition:color 0.2s;">邮件客户端↗</a>
+                <span style="color:#64748b;font-size:0.85rem;">|</span>
+                <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=3999679973@qq.com" target="_blank" style="color:#cbd5e1;transition:color 0.2s;"> QQ邮箱网页版↗</a>
+                <span style="color:#64748b;font-size:0.85rem;">|</span>
+                <span id="emailDisplay" style="cursor:pointer;color:#cbd5e1;user-select:all;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#cbd5e1'" onclick="copyEmail()">📋 复制邮箱号</span>
             </div>
         </div>
-    </footer>
-
+        <div class="footer-bottom">
+            <p>本网站代码版权归社团所有，未经授权不得转载或商用。</p>
+            <p style="margin-top:0.5rem;">Built with ❤️ by 新一科机器人社</p>
+            <p><a href="log.html" style="color:#94a3b8;text-decoration:underline;">更新日志</a></p>
+        </div>
+    </div>
+</footer>
     <!-- ===== JavaScript ===== -->
     <script>
         // 1. 移动端菜单切换
