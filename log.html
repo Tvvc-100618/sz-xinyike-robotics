@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>更新日志 · 新一科机器人社</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #e9eef3;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            color: #0f2b4b;
+        }
+        .header h1 span {
+            color: #1e6f9f;
+        }
+
+        .back-link {
+            color: #1e6f9f;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.4rem 1.2rem;
+            border: 2px solid #1e6f9f;
+            border-radius: 40px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .back-link:hover {
+            background: #1e6f9f;
+            color: #fff;
+        }
+
+        .log-entry {
+            border-left: 4px solid #1e6f9f;
+            padding-left: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .log-entry .meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.8rem 1.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .log-entry .version {
+            font-weight: 700;
+            color: #0f2b4b;
+            font-size: 1.1rem;
+        }
+
+        .log-entry .date {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .log-entry .author {
+            color: #1e6f9f;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .log-entry .title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #0f2b4b;
+            margin: 0.25rem 0 0.5rem;
+        }
+
+        .log-entry .description {
+            color: #334155;
+            margin-bottom: 0.4rem;
+        }
+
+        .log-entry .details {
+            background: #f1f6fa;
+            padding: 0.8rem 1.2rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            color: #1e293b;
+            margin-top: 0.6rem;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .log-entry .details code {
+            background: #e2e8f0;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e9eef3;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            .log-entry .meta {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 页头 -->
+        <div class="header">
+            <h1>📋 更新日志 <span>· 代码优化记录</span></h1>
+            <a href="index.html" class="back-link">← 返回首页</a>
+        </div>
+
+        <!-- 日志条目列表 -->
+        <!-- 请按时间倒序（最新的在上面）添加新条目 -->
+
+        <!-- ===== 2026-08-09 更新 ===== -->
+        <div class="log-entry">
+            <div class="meta">
+                <span class="version">v1.3.1</span>
+                <span class="date">2026-08-09</span>
+                <span class="author">@新一科技术组</span>
+            </div>
+            <div class="title">首次在github部署</div>
+       	  </div>
+
+        <div class="log-entry">
+            <div class="meta">
+                <span class="version">v1.3.0</span>
+                <span class="date">2026-08-09</span>
+                <span class="author">@新一科技术组</span>
+            </div>
+            <div class="title">🖼️ 荣誉成果改为图片轮播 + 路径修复</div>
+            <div class="description">
+                将荣誉展示从静态卡片升级为图片随机轮播，并修复了因中文文件名和全角括号导致的图片加载失败问题。
+            </div>
+            <div class="details">
+                <strong>具体改动：</strong><br>
+                • 移除原有卡片网格，改为单张大图 + 文字描述展示<br>
+                • 每 5 秒随机切换一张奖状图片，文字同步更新<br>
+                • 新增小圆点指示器，支持点击手动跳转<br>
+                • 鼠标悬停时暂停轮播，移出继续<br>
+                • 所有奖状图片存放于 <code>photos/achievements/</code> 文件夹<br>
+                • 图片文件名采用含全角括号的原始中文名（与本地文件严格一致）<br>
+                • 确保 7 张奖状全部正常显示（MakeX 及省赛奖项）
+            </div>
+        </div>
+
+        <div class="log-entry">
+            <div class="meta">
+                <span class="version">v1.2.0</span>
+                <span class="date">2026-08-09</span>
+                <span class="author">@新一科技术组</span>
+            </div>
+            <div class="title">📺 招新视频改用跳转按钮</div>
+            <div class="description">
+                由于 B站嵌入权限限制，将“加入我们”区域中的视频 iframe 替换为直接跳转 B站的按钮，提升访问稳定性。
+            </div>
+            <div class="details">
+                <strong>具体改动：</strong><br>
+                • 移除视频嵌入代码（原 <code>iframe</code>）<br>
+                • 新增 B站风格按钮（#00a1d6 品牌色），点击后在新标签页打开招新视频<br>
+                • 按钮链接：<a href="https://www.bilibili.com/video/BV1YVgtzCExd?t=1.2" target="_blank">https://www.bilibili.com/video/BV1YVgtzCExd?t=1.2</a><br>
+                • 与“立即报名”按钮并列，提升操作便捷性
+            </div>
+        </div>
+
+        <div class="log-entry">
+            <div class="meta">
+                <span class="version">v1.1.0</span>
+                <span class="date">2026-08-09</span>
+                <span class="author">@新一科技术组</span>
+            </div>
+            <div class="title">🖼️ 关于区域添加图片轮播</div>
+            <div class="description">
+                将“关于我们”区域的静态占位图替换为多张图片自动轮播，每 5 秒切换一次。
+            </div>
+            <div class="details">
+                <strong>具体改动：</strong><br>
+                • 新建 <code>photos/about/</code> 文件夹，存放社团合影或实验室照片<br>
+                • 使用 CSS 淡入淡出过渡效果<br>
+                • 添加底部指示圆点，支持手动点击跳转<br>
+                • 鼠标悬停时自动暂停轮播
+            </div>
+        </div>
+
+
+        <!-- 更多日志可继续追加 -->
+
+        <div class="footer-note">
+            <p>📌 记录每一次成长，让进步有迹可循</p>
+            <p style="margin-top:0.3rem;">— 苏州新一计协技术组 —</p>
+        </div>
+    </div>
+</body>
+</html>
