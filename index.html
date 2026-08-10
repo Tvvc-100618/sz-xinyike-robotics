@@ -766,29 +766,30 @@
         </div>
     </section>
 
-<!-- ===== 页脚 ===== -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-top">
-            <div class="footer-copy">
-                <span class="copyright">© 2026 苏州高新区第一中学科技城校机器人社团</span>
+    <!-- ===== 页脚 ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-copy">
+                    <span class="copyright">© 2026 苏州高新区第一中学科技城校机器人社团</span>
+                </div>
+                <div class="footer-links">
+                    <span>📧 邮箱：</span>
+                    <a href="mailto:3999679973@qq.com" style="color:#cbd5e1;transition:color 0.2s;">邮件客户端↗</a>
+                    <span style="color:#64748b;font-size:0.85rem;">|</span>
+                    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=3999679973@qq.com" target="_blank" style="color:#cbd5e1;transition:color 0.2s;"> QQ邮箱网页版↗</a>
+                    <span style="color:#64748b;font-size:0.85rem;">|</span>
+                    <span id="emailDisplay" style="cursor:pointer;color:#cbd5e1;user-select:all;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#cbd5e1'" onclick="copyEmail()">📋 复制邮箱号</span>
+                </div>
             </div>
-            <div class="footer-links">
-                <span>📧 邮箱：</span>
-                <a href="mailto:3999679973@qq.com" style="color:#cbd5e1;transition:color 0.2s;">邮件客户端↗</a>
-                <span style="color:#64748b;font-size:0.85rem;">|</span>
-                <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=3999679973@qq.com" target="_blank" style="color:#cbd5e1;transition:color 0.2s;"> QQ邮箱网页版↗</a>
-                <span style="color:#64748b;font-size:0.85rem;">|</span>
-                <span id="emailDisplay" style="cursor:pointer;color:#cbd5e1;user-select:all;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#cbd5e1'" onclick="copyEmail()">📋 复制邮箱号</span>
+            <div class="footer-bottom">
+                <p>本网站代码版权归社团所有，未经授权不得转载或商用。</p>
+                <p style="margin-top:0.5rem;">Built with ❤️ by 新一科机器人社</p>
+                <p><a href="log.html" style="color:#94a3b8;text-decoration:underline;">更新日志</a></p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>本网站代码版权归社团所有，未经授权不得转载或商用。</p>
-            <p style="margin-top:0.5rem;">Built with ❤️ by 新一科机器人社</p>
-            <p><a href="log.html" style="color:#94a3b8;text-decoration:underline;">更新日志</a></p>
-        </div>
-    </div>
-</footer>
+    </footer>
+
     <!-- ===== JavaScript ===== -->
     <script>
         // 1. 移动端菜单切换
@@ -970,6 +971,33 @@
                 });
             }
         })();
+
+        // ===== 4. 复制邮箱号功能 =====
+        function copyEmail() {
+            const email = '3999679973@qq.com';
+            // 优先使用现代 Clipboard API
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(email)
+                    .then(() => {
+                        alert('📋 邮箱地址已复制！');
+                    })
+                    .catch(() => {
+                        fallbackCopy(email);
+                    });
+            } else {
+                fallbackCopy(email);
+            }
+        }
+
+        function fallbackCopy(text) {
+            const input = document.createElement('input');
+            input.value = text;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            alert('📋 邮箱地址已复制！');
+        }
     </script>
 </body>
 </html>
