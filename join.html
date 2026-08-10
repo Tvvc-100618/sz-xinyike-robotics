@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>加入我们 · 苏州新一科机器人社</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <style>
+        /* ===== 全局重置 & 基础 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== 导航栏 ===== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #0f2b4b;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: #1e6f9f;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .nav-links a {
+            color: #334155;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #1e6f9f;
+        }
+
+        .nav-cta {
+            background: #1e6f9f;
+            color: #fff !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover {
+            background: #155580 !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #1e293b;
+        }
+
+        /* ===== 页面标题区 ===== */
+        .page-header {
+            padding: 60px 0 40px;
+            background: linear-gradient(145deg, #eef5fa 0%, #d9e6f0 100%);
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #0f2b4b;
+        }
+        .page-header h1 .highlight {
+            color: #1e6f9f;
+        }
+        .page-header p {
+            font-size: 1.2rem;
+            color: #475569;
+            margin-top: 0.8rem;
+        }
+
+        /* ===== 通用 section ===== */
+        section {
+            padding: 60px 0;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f2b4b;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* ===== 招新亮点（卡片网格） ===== */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        .benefit-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e9eef3;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        }
+        .benefit-card .icon {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .benefit-card h3 {
+            font-size: 1.15rem;
+            color: #0f2b4b;
+            margin-bottom: 0.3rem;
+        }
+        .benefit-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* ===== 报名要求 ===== */
+        .requirements {
+            background: #f1f6fa;
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .requirements ul {
+            list-style: none;
+            padding: 0;
+        }
+        .requirements ul li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-size: 1rem;
+            color: #1e293b;
+        }
+        .requirements ul li:last-child {
+            border-bottom: none;
+        }
+        .requirements ul li .check {
+            color: #1e6f9f;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* ===== 报名流程 ===== */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .step {
+            text-align: center;
+        }
+        .step .number {
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            line-height: 48px;
+            border-radius: 50%;
+            background: #1e6f9f;
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+        .step h3 {
+            font-size: 1.1rem;
+            color: #0f2b4b;
+            margin-bottom: 0.2rem;
+        }
+        .step p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* ===== FAQ 折叠 ===== */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 16px;
+            border: 1px solid #e9eef3;
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .faq-item:hover {
+            border-color: #cbd5e1;
+        }
+        .faq-question {
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: #0f2b4b;
+            user-select: none;
+            transition: background 0.2s;
+        }
+        .faq-question:hover {
+            background: #f8fafc;
+        }
+        .faq-question .arrow {
+            transition: transform 0.3s;
+            font-size: 1.1rem;
+            color: #94a3b8;
+        }
+        .faq-item.active .faq-question .arrow {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            padding: 0 1.5rem 1.2rem 1.5rem;
+            color: #475569;
+            font-size: 0.98rem;
+            display: none;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* ===== 报名入口（CTA） ===== */
+        .cta-section {
+            background: linear-gradient(135deg, #1e6f9f, #155580);
+            border-radius: 32px;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: #fff;
+        }
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+        }
+        .cta-section p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.85rem 2.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.25s;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+        .btn-white {
+            background: #fff;
+            color: #1e6f9f;
+        }
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        .btn-outline-white {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+        .btn-outline-white:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+        }
+        .cta-section .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        /* ===== 页脚 ===== */
+        .footer {
+            background: #0f2b4b;
+            color: #cbd5e1;
+            padding: 3rem 0 2rem;
+            margin-top: 40px;
+        }
+        .footer .container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-copy {
+            font-size: 0.9rem;
+        }
+        .footer-copy .copyright {
+            color: #94a3b8;
+        }
+        .footer-links {
+            display: flex;
+            gap: 0.8rem;
+            font-size: 0.9rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: #cbd5e1;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: #fff;
+        }
+        .footer-links .separator {
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+        .footer-links .copy-btn {
+            cursor: pointer;
+            color: #cbd5e1;
+            user-select: all;
+            transition: color 0.2s;
+        }
+        .footer-links .copy-btn:hover {
+            color: #fff;
+        }
+        .footer-bottom {
+            border-top: 1px solid #1e3a5f;
+            padding-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            text-align: center;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #fff;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                padding: 1.5rem 2rem;
+                gap: 1.2rem;
+                box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+                border-bottom: 1px solid #e9eef3;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .steps {
+                grid-template-columns: 1fr;
+            }
+            .cta-section h2 {
+                font-size: 1.6rem;
+            }
+            .footer-top {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 0 16px;
+            }
+            .page-header h1 {
+                font-size: 1.6rem;
+            }
+            .footer-links {
+                font-size: 0.8rem;
+                gap: 0.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== 导航栏 ===== -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">苏州新一科<span>机器人社</span></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="index.html#achievements">荣誉成果</a></li>
+                <li><a href="index.html#news">社团动态</a></li>
+                <li><a href="join.html" class="nav-cta">加入我们</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle" aria-label="菜单">☰</button>
+        </div>
+    </header>
+
+    <!-- ===== 页面标题 ===== -->
+    <div class="page-header">
+        <div class="container">
+            <h1>🤖 加入 <span class="highlight">新一科机器人社</span></h1>
+            <p>用代码驱动创新，用机械臂探索未来 —— 我们期待与你同行</p>
+        </div>
+    </div>
+
+    <!-- ===== 招新亮点 ===== -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">🌟 为什么加入我们</h2>
+            <p class="section-subtitle">在这里，你将收获技能、友谊与无限可能</p>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon">⚙️</div>
+                    <h3>动手实践</h3>
+                    <p>从零开始设计、搭建、编程自己的机器人</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🏆</div>
+                    <h3>竞赛机会</h3>
+                    <p>参加 FTC、VEX、MakeX 等国内外顶级赛事</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">👥</div>
+                    <h3>团队协作</h3>
+                    <p>与志同道合的伙伴一起分工合作、共同成长</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🧠</div>
+                    <h3>技能提升</h3>
+                    <p>学习机械结构、电子电路、编程算法等综合知识</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🎯</div>
+                    <h3>创新思维</h3>
+                    <p>培养解决问题的能力和工程思维</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 报名要求 ===== -->
+    <section style="background:#f8fafc;">
+        <div class="container">
+            <h2 class="section-title">📋 我们需要这样的你</h2>
+            <p class="section-subtitle">不论基础，只要热爱，这里就有你的位置</p>
+            <div class="requirements">
+                <ul>
+                    <li><span class="check">✅</span> <strong>对机器人和科技创新有浓厚兴趣</strong> —— 这是最重要的一点</li>
+                    <li><span class="check">✅</span> <strong>有团队合作精神</strong> —— 我们是一个整体，共同攻克难题</li>
+                    <li><span class="check">✅</span> <strong>具备探索精神和学习热情</strong> —— 愿意主动学习新知识、新技能</li>
+                    <li><span class="check">✅</span> <strong>不限基础</strong> —— 无论你是编程小白还是机械达人，都欢迎加入</li>
+                    <li><span class="check">✅</span> <strong>有责任心</strong> —— 认真对待每一次训练和比赛</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 报名流程 ===== -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">🚀 报名流程</h2>
+            <p class="section-subtitle">三步加入我们，开启你的机器人之旅</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="number">1</div>
+                    <h3>填写报名表</h3>
+                    <p>点击下方按钮，填写在线报名表</p>
+                </div>
+                <div class="step">
+                    <div class="number">2</div>
+                    <h3>参加面试</h3>
+                    <p>我们会在 3 个工作日内联系你，安排简单交流</p>
+                </div>
+                <div class="step">
+                    <div class="number">3</div>
+                    <h3>正式入社</h3>
+                    <p>通过面试后，即可正式成为新一科机器人社的一员</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 常见问题 ===== -->
+    <section style="background:#f8fafc;">
+        <div class="container">
+            <h2 class="section-title">❓ 常见问题</h2>
+            <p class="section-subtitle">你想知道的都在这里</p>
+            <div class="faq-list" id="faqList">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>🤔 完全没有编程基础，可以加入吗？</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">当然可以！我们欢迎所有对机器人感兴趣的同学。入社后会有学长学姐带领学习，从零基础开始，逐步掌握编程、机械设计等技能。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>🕐 社团活动时间是怎么安排的？</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">常规活动时间为每周二、周四下午放学后，以及周六上午。比赛备战期间会根据需要适当增加训练时间。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>💰 加入社团需要交费吗？</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">社团不收取任何常规费用。器材和比赛报名费由学校支持，你只需要投入时间和热情！</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>🏆 社团主要参加哪些比赛？</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">我们主要参加 MakeX、FTC、VEX 等机器人竞赛，以及省市级青少年科技创新大赛，近年来已获得多项省级以上奖项。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>🔧 需要自带电脑或工具吗？</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">社团提供机器人套件、工具和编程设备。如果个人有笔记本电脑，建议带上以便于日常练习；没有的话社团也可以提供。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 报名入口 ===== -->
+    <section>
+        <div class="container">
+            <div class="cta-section">
+                <h2>🤝 加入我们，一起造梦！</h2>
+                <p>无论你是零基础的爱好者，还是经验丰富的老手，新一科机器人社都期待你的加入。</p>
+                <div class="btn-group">
+                    <!-- 修改：立即报名按钮链接指向腾讯文档报名表 -->
+                    <a href="https://docs.qq.com/form/page/DUUpqVEdId0RJRExm" target="_blank" class="btn btn-white">📝 立即报名</a>
+                    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=3999679973@qq.com" target="_blank" class="btn btn-outline-white">📧 邮件咨询</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 页脚 ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-copy">
+                    <span class="copyright">© 2026 苏州高新区第一中学科技城校机器人社团</span>
+                </div>
+                <div class="footer-links">
+                    <span>📧 邮箱：</span>
+                    <a href="mailto:3999679973@qq.com" style="color:#cbd5e1;transition:color 0.2s;">邮件客户端↗</a>
+                    <span class="separator">|</span>
+                    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=3999679973@qq.com" target="_blank" style="color:#cbd5e1;transition:color 0.2s;">QQ邮箱网页版↗</a>
+                    <span class="separator">|</span>
+                    <span class="copy-btn" onclick="copyEmail()" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#cbd5e1'">📋 复制邮箱号</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>本网站代码版权归社团所有，未经授权不得转载或商用。</p>
+                <p style="margin-top:0.5rem;">Built with ❤️ by 新一科机器人社</p>
+                <p><a href="log.html" style="color:#94a3b8;text-decoration:underline;">更新日志</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JavaScript ===== -->
+    <script>
+        // 1. 移动端菜单切换
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            const nav = document.getElementById('navLinks');
+            nav.classList.toggle('open');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('open');
+            });
+        });
+
+        // 2. FAQ 折叠展开
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // 3. 复制邮箱号功能（与 index.html 一致）
+        function copyEmail() {
+            const email = '3999679973@qq.com';
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(email)
+                    .then(() => {
+                        alert('📋 邮箱地址已复制！');
+                    })
+                    .catch(() => {
+                        fallbackCopy(email);
+                    });
+            } else {
+                fallbackCopy(email);
+            }
+        }
+
+        function fallbackCopy(text) {
+            const input = document.createElement('input');
+            input.value = text;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            alert('📋 邮箱地址已复制！');
+        }
+
+        // 默认打开第一个 FAQ
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstFaq = document.querySelector('.faq-item');
+            if (firstFaq) {
+                firstFaq.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -125,6 +125,11 @@
             font-size: 0.9rem;
         }
 
+        .log-entry .details a {
+            color: #1e6f9f;
+            text-decoration: underline;
+        }
+
         .footer-note {
             margin-top: 3rem;
             padding-top: 1.5rem;
@@ -162,7 +167,55 @@
         <!-- 日志条目列表 -->
         <!-- 请按时间倒序（最新的在上面）添加新条目 -->
 
+        <!-- ===== v1.5.0 新增加入我们页面 ===== -->
 
+        <div class="log-entry">
+            <div class="meta">
+                <span class="version">v1.5.1</span>
+                <span class="date">2026-08-10</span>
+                <span class="author">@新一计协技术组</span>
+            </div>
+            <div class="title">github部署更新</div>
+            <div class="description">
+            </div>
+        </div>
+
+        <div class="log-entry">
+            <div class="meta">
+                <span class="version">v1.5.0</span>
+                <span class="date">2026-08-10</span>
+                <span class="author">@新一计协技术组</span>
+            </div>
+            <div class="title">📄 新增加入我们页面</div>
+            <div class="description">
+                创建独立的“加入我们”页面（join.html），完善招新信息展示与报名入口。
+            </div>
+            <div class="details">
+                <strong>具体改动：</strong><br>
+                • 新增 <code>join.html</code> 页面，包含招新亮点、报名要求、报名流程、FAQ 等模块<br>
+                • 招新亮点：5 个卡片展示加入社团的收获（动手实践、竞赛机会等）<br>
+                • 报名要求：列出 5 项要求，强调“不限基础”<br>
+                • 报名流程：三步走（填写报名表 → 面试 → 正式入社）<br>
+                • FAQ 折叠：5 个常见问题，点击展开/收起<br>
+                • CTA 报名入口：渐变蓝色背景，包含“立即报名”和“邮件咨询”按钮<br>
+                • “立即报名”按钮链接至腾讯文档报名表：<a href="https://docs.qq.com/form/page/DUUpqVEdId0RJRExm" target="_blank">https://docs.qq.com/form/page/DUUpqVEdId0RJRExm</a><br>
+                • “邮件咨询”按钮跳转至 QQ 邮箱网页版，解决 <code>mailto:</code> 不可用的问题<br>
+                • 页脚邮箱功能与 <code>index.html</code> 保持一致（邮件客户端、QQ邮箱网页版、复制邮箱号）<br>
+                • 导航栏新增“加入我们”入口
+            </div>
+        </div>
+
+        <div class="log-entry">
+            <div class="meta">
+                <span class="version">v1.4.2</span>
+                <span class="date">2026-08-10</span>
+                <span class="author">@新一计协技术组</span>
+            </div>
+            <div class="title">github部署更新</div>
+            <div class="description">
+                修复了复制邮箱号时出错，并再次部署更新
+            </div>
+        </div>
 
         <div class="log-entry">
             <div class="meta">
@@ -172,9 +225,8 @@
             </div>
             <div class="title">github部署更新</div>
             <div class="description">
-			部署网址为<a href="https://tvvc-100618.github.io/sz-xinyike-robotics/">https://tvvc-100618.github.io/sz-xinyike-robotics/</a>
             </div>
-       	  </div>
+        </div>
 
         <div class="log-entry">
             <div class="meta">
@@ -184,7 +236,7 @@
             </div>
             <div class="title">📮邮箱按钮</div>
             <div class="description">
-		对邮箱按钮进行了配置
+                对邮箱按钮进行了配置
             </div>
             <div class="details">
                 <strong>具体改动：</strong><br>
@@ -195,7 +247,6 @@
             </div>
         </div>
 
-
         <div class="log-entry">
             <div class="meta">
                 <span class="version">v1.3.1</span>
@@ -204,9 +255,9 @@
             </div>
             <div class="title">首次在github部署</div>
             <div class="description">
-			部署网址为<a href="https://tvvc-100618.github.io/sz-xinyike-robotics/">https://tvvc-100618.github.io/sz-xinyike-robotics/</a>
+                部署网址为<a href="https://tvvc-100618.github.io/sz-xinyike-robotics/">https://tvvc-100618.github.io/sz-xinyike-robotics/</a>
             </div>
-       	  </div>
+        </div>
 
         <div class="log-entry">
             <div class="meta">
@@ -268,12 +319,11 @@
             </div>
         </div>
 
-
         <!-- 更多日志可继续追加 -->
 
         <div class="footer-note">
             <p>📌 记录每一次成长，让进步有迹可循</p>
-            <p style="margin-top:0.3rem;">— 苏州新一计协技术组 —</p>
+            <p style="margin-top:0.3rem;">— 苏州新一科机器人社 · 技术团队 —</p>
         </div>
     </div>
 </body>
