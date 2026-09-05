@@ -153,80 +153,69 @@
             opacity: 0.3;
         }
 
-        /* ===== 社长信息卡 ===== */
+        /* ===== 社长信息卡（头像放大至120px，占位） ===== */
         .author-card {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1.8rem;
             margin-bottom: 2rem;
             padding-bottom: 1.5rem;
             border-bottom: 2px dashed #e8e0d8;
         }
         .author-card .avatar {
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             background: #d9e6f0;
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.4rem;
+            font-size: 4rem;          /* 放大占位图标 */
             color: #1e6f9f;
-            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
         .author-card .info h2 {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             color: #0f2b4b;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
         }
         .author-card .info .meta {
             color: #64748b;
-            font-size: 0.95rem;
-            margin-top: 0.1rem;
+            font-size: 1rem;
+            margin-top: 0.2rem;
         }
         .author-card .info .meta span {
             margin: 0 0.4rem;
         }
 
-        /* ===== 寄语正文 ===== */
+        /* ===== 寄语正文（单句，居中，无首字母特效） ===== */
         .letter-body {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             line-height: 2;
             color: #1e293b;
+            text-align: center;
+            padding: 1.5rem 0 0.5rem;
         }
         .letter-body p {
-            margin-bottom: 1.2rem;
-            text-indent: 2em;
-        }
-        .letter-body p:first-of-type {
+            margin-bottom: 0.5rem;
             text-indent: 0;
         }
-        .letter-body p:first-of-type::first-letter {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: #1e6f9f;
-            float: left;
-            line-height: 1;
-            margin-right: 0.3rem;
+        .letter-body p:last-of-type {
+            margin-bottom: 0;
+        }
+        .letter-body p::first-letter {
+            font-size: inherit;
+            font-weight: inherit;
+            color: inherit;
+            float: none;
+            margin-right: 0;
         }
 
-        /* ===== 落款签名 ===== */
-        .signature {
-            margin-top: 2.5rem;
-            padding-top: 1.5rem;
-            border-top: 2px dashed #e8e0d8;
-            text-align: right;
-            font-size: 1.05rem;
-        }
-        .signature .name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #0f2b4b;
-        }
-        .signature .date {
-            color: #94a3b8;
-            font-size: 0.9rem;
-            margin-top: 0.2rem;
-        }
+        /* ===== 落款签名已删除 ===== */
 
         /* ===== 返回按钮 ===== */
         .back-row {
@@ -337,7 +326,10 @@
             .author-card {
                 flex-direction: column;
                 text-align: center;
-                gap: 0.8rem;
+                gap: 1rem;
+            }
+            .author-card .info h2 {
+                justify-content: center;
             }
             .letter-body {
                 font-size: 1rem;
@@ -363,12 +355,12 @@
                 padding: 1.5rem 0.8rem;
             }
             .author-card .avatar {
-                width: 60px;
-                height: 60px;
-                font-size: 1.8rem;
+                width: 90px;
+                height: 90px;
+                font-size: 3rem;
             }
-            .letter-body p:first-of-type::first-letter {
-                font-size: 2rem;
+            .letter-body {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -402,44 +394,31 @@
         <div class="container">
             <div class="letter-paper">
 
+                <!-- ===== 作者信息卡（头像占位，放大） ===== -->
                 <div class="author-card">
                     <div class="avatar">👤</div>
                     <div class="info">
-                        <h2>王宏轶</h2>
+                        <h2>
+                            王宏轶
+                            <span style="font-size:0.75rem;font-weight:400;color:#94a3b8;background:#ede8e0;padding:0.1rem 0.8rem;border-radius:20px;">社长</span>
+                        </h2>
                         <div class="meta">
                             第二届社长 <span>·</span> 2025-2026
                         </div>
                     </div>
                 </div>
 
+                <!-- ===== 寄语正文（简短神秘） ===== -->
                 <div class="letter-body">
-                    <p>
-                        致新一科机器人社的每一位伙伴：
-                    </p>
-                    <p>
-                        从王一帆学长手中接过这份沉甸甸的接力棒时，我深知这不仅仅是一个头衔，更是一份责任与信任。作为第二届社长，我有幸见证了社团从稚嫩走向成熟的关键阶段。
-                    </p>
-                    <p>
-                        这一年，我们第一次走出校门参加省级比赛，第一次在赛场上感受到那种心跳加速的紧张与胜利后的狂喜。我记得赛前那晚，队员们挤在酒店房间里做最后的程序调试，每个人眼中都闪烁着专注的光芒——那一刻我明白了，机器人社的魅力不在于奖杯本身，而在于一群人为了共同目标全力以赴的过程。
-                    </p>
-                    <p>
-                        社团在这一年里有了很多“第一次”：第一次拥有自己的训练场地，第一次建立起系统的培训体系，第一次有老社员带新社员的传承机制。这些看似微小的进步，却是社团持续发展的基石。我特别感谢曹老师、朱老师的悉心指导，以及每一位为社团付出心血的成员。
-                    </p>
-                    <p>
-                        我想对现在的社员们说：请珍惜在这里的每一刻。无论是成功的经验还是失败的教训，都将成为你们成长道路上最宝贵的财富。当你们遇到困难时，请想起我们共同战胜的那些挑战——没有什么是解决不了的。
-                    </p>
-                    <p>
-                        我相信，在现任社长沈浩的带领下，新一科机器人社一定会走向更广阔的舞台。愿你们始终保持那份对机器人的热爱，在创新的道路上永不停歇。
-                    </p>
+                    <p>这个人很神秘，什么都没留下。</p>
+                    <p>期待一下吧~</p>
                 </div>
 
-                <div class="signature">
-                    <div class="name">—— 王宏轶</div>
-                    <div class="date">2025 年 秋</div>
-                </div>
+                <!-- ===== 落款签名已删除 ===== -->
 
             </div>
 
+            <!-- ===== 返回按钮 ===== -->
             <div class="back-row">
                 <a href="../about.html#leaders" class="back-btn">← 返回 about 页面</a>
             </div>
@@ -471,6 +450,7 @@
     </footer>
 
     <script>
+        // ===== 移动端菜单切换 =====
         document.getElementById('menuToggle').addEventListener('click', function() {
             const nav = document.getElementById('navLinks');
             nav.classList.toggle('open');
@@ -482,6 +462,7 @@
             });
         });
 
+        // ===== 复制邮箱 =====
         function copyEmail() {
             const email = '3999679973@qq.com';
             if (navigator.clipboard && navigator.clipboard.writeText) {

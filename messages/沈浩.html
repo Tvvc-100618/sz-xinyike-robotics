@@ -153,79 +153,123 @@
             opacity: 0.3;
         }
 
-        /* ===== 社长信息卡 ===== */
+        /* ===== 社长信息卡（头像放大） ===== */
         .author-card {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1.8rem;
             margin-bottom: 2rem;
             padding-bottom: 1.5rem;
             border-bottom: 2px dashed #e8e0d8;
         }
         .author-card .avatar {
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             background: #d9e6f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.4rem;
-            color: #1e6f9f;
             flex-shrink: 0;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        .author-card .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
         .author-card .info h2 {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             color: #0f2b4b;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
         }
         .author-card .info .meta {
             color: #64748b;
-            font-size: 0.95rem;
-            margin-top: 0.1rem;
+            font-size: 1rem;
+            margin-top: 0.2rem;
         }
         .author-card .info .meta span {
             margin: 0 0.4rem;
         }
 
-        /* ===== 寄语正文 ===== */
+        /* ===== 寄语正文（单句） ===== */
         .letter-body {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             line-height: 2;
             color: #1e293b;
+            text-align: center;
+            padding: 1.5rem 0 0.5rem;
         }
         .letter-body p {
-            margin-bottom: 1.2rem;
-            text-indent: 2em;
-        }
-        .letter-body p:first-of-type {
+            margin-bottom: 0;
             text-indent: 0;
         }
-        .letter-body p:first-of-type::first-letter {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: #1e6f9f;
-            float: left;
-            line-height: 1;
-            margin-right: 0.3rem;
+        .letter-body p::first-letter {
+            font-size: inherit;
+            font-weight: inherit;
+            color: inherit;
+            float: none;
+            margin-right: 0;
         }
 
-        /* ===== 落款签名 ===== */
-        .signature {
+        /* ===== 底部画廊 ===== */
+        .gallery-section {
             margin-top: 2.5rem;
             padding-top: 1.5rem;
             border-top: 2px dashed #e8e0d8;
-            text-align: right;
-            font-size: 1.05rem;
         }
-        .signature .name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #0f2b4b;
-        }
-        .signature .date {
+        .gallery-section .gallery-label {
+            font-size: 0.85rem;
             color: #94a3b8;
-            font-size: 0.9rem;
-            margin-top: 0.2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        /* 三列布局（原2,3/5,4） */
+        .gallery-grid {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .gallery-col {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .gallery-item {
+            border-radius: 12px;
+            background: #ede8e0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 新增：两列并排行（图6、图7） */
+        .gallery-extra-row {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1.2rem;
+            justify-content: center;
+        }
+        .gallery-extra-row .gallery-item {
+            flex: 1;
+            min-width: 0;
         }
 
         /* ===== 返回按钮 ===== */
@@ -337,7 +381,10 @@
             .author-card {
                 flex-direction: column;
                 text-align: center;
-                gap: 0.8rem;
+                gap: 1rem;
+            }
+            .author-card .info h2 {
+                justify-content: center;
             }
             .letter-body {
                 font-size: 1rem;
@@ -349,6 +396,16 @@
             }
             .footer-links {
                 justify-content: center;
+            }
+            .gallery-grid {
+                gap: 0.8rem;
+            }
+            .gallery-col {
+                gap: 0.8rem;
+            }
+            .gallery-extra-row {
+                gap: 0.8rem;
+                margin-top: 0.8rem;
             }
         }
 
@@ -363,12 +420,24 @@
                 padding: 1.5rem 0.8rem;
             }
             .author-card .avatar {
-                width: 60px;
-                height: 60px;
-                font-size: 1.8rem;
+                width: 90px;
+                height: 90px;
             }
-            .letter-body p:first-of-type::first-letter {
-                font-size: 2rem;
+            .letter-body {
+                font-size: 0.95rem;
+            }
+            .gallery-grid {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .gallery-col {
+                flex: none;
+                width: 100%;
+                gap: 0.8rem;
+            }
+            .gallery-extra-row {
+                flex-direction: column;
+                gap: 0.8rem;
             }
         }
     </style>
@@ -402,44 +471,66 @@
         <div class="container">
             <div class="letter-paper">
 
+                <!-- ===== 作者信息卡 ===== -->
                 <div class="author-card">
-                    <div class="avatar">👤</div>
+                    <div class="avatar">
+                        <img src="photos/沈浩/1.jpg" alt="沈浩社长照片" />
+                    </div>
                     <div class="info">
-                        <h2>沈浩</h2>
+                        <h2>
+                            沈浩
+                            <span style="font-size:0.75rem;font-weight:400;color:#94a3b8;background:#ede8e0;padding:0.1rem 0.8rem;border-radius:20px;">社长</span>
+                        </h2>
                         <div class="meta">
                             第三届社长 <span>·</span> 2026-2027
                         </div>
                     </div>
                 </div>
 
+                <!-- ===== 寄语正文 ===== -->
                 <div class="letter-body">
-                    <p>
-                        亲爱的新一科机器人社家人们：
-                    </p>
-                    <p>
-                        当我写下这段话时，窗外正是苏州最美的秋天。距离社团成立已经过去了两年多，而我有幸成为第三届社长，站在前辈们打下的坚实基础上，接续这份热爱与使命。
-                    </p>
-                    <p>
-                        回顾自己在社团的成长历程，从初入社团时连电机都不会接线的新人，到能够独立设计机器人结构的队长，再到如今肩负起整个社团责任的社长——每一个阶段都离不开学长学姐们的帮助和老师们的指导。王一帆学长奠定了社团的精神底色，王宏轶学长让社团走向更广阔的赛场，而我希望能够将这份接力棒传递得更好。
-                    </p>
-                    <p>
-                        展望未来，我有三个小小的愿景：第一，让更多的同学感受到机器人竞赛的魅力，不仅仅是参赛，更是在这个过程中收获成长；第二，建立更完善的技术传承体系，让每一届的新人都能快速融入、持续进步；第三，让新一科机器人社的名字被更多人看到，在更高的舞台上展现我们的实力。
-                    </p>
-                    <p>
-                        我想对新加入的伙伴们说：无论你现在的水平如何，只要你有一颗热爱的心，这里就有你的位置。不要害怕问问题，不要害怕犯错，因为每一个错误都是学习的机会。机器人社是一个包容的大家庭，我们一起成长、一起进步。
-                    </p>
-                    <p>
-                        最后，我想对未来的自己、也对未来的社团说：保持初心，但不要停止突破。新一科机器人社的齿轮已经转动，而它未来的轨迹，由我们每一个人共同决定。
-                    </p>
+                    <p>这个社人很神秘，什么都没留下。</p>
+                    <p>期待一下吧~</p>
                 </div>
 
-                <div class="signature">
-                    <div class="name">—— 沈浩</div>
-                    <div class="date">2026 年 秋</div>
+                <!-- ===== 底部画廊 ===== -->
+                <div class="gallery-section">
+                    <div class="gallery-label">✦ 个人风采 ✦</div>
+                    <!-- 原有三列：2 | 3+5 | 4 -->
+                    <div class="gallery-grid">
+                        <div class="gallery-col">
+                            <div class="gallery-item">
+                                <img src="photos/沈浩/2.jpg" alt="个人展示 2" loading="lazy" />
+                            </div>
+                        </div>
+                        <div class="gallery-col">
+                            <div class="gallery-item">
+                                <img src="photos/沈浩/3.jpg" alt="个人展示 3" loading="lazy" />
+                            </div>
+                            <div class="gallery-item">
+                                <img src="photos/沈浩/5.jpg" alt="个人展示 5" loading="lazy" />
+                            </div>
+                        </div>
+                        <div class="gallery-col">
+                            <div class="gallery-item">
+                                <img src="photos/沈浩/4.jpg" alt="个人展示 4" loading="lazy" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 新增一行：图6、图7 并排 -->
+                    <div class="gallery-extra-row">
+                        <div class="gallery-item">
+                            <img src="photos/沈浩/6.jpg" alt="个人展示 6" loading="lazy" />
+                        </div>
+                        <div class="gallery-item">
+                            <img src="photos/沈浩/7.jpg" alt="个人展示 7" loading="lazy" />
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
+            <!-- ===== 返回按钮 ===== -->
             <div class="back-row">
                 <a href="../about.html#leaders" class="back-btn">← 返回 about 页面</a>
             </div>
@@ -471,6 +562,7 @@
     </footer>
 
     <script>
+        // ===== 移动端菜单切换 =====
         document.getElementById('menuToggle').addEventListener('click', function() {
             const nav = document.getElementById('navLinks');
             nav.classList.toggle('open');
@@ -482,6 +574,7 @@
             });
         });
 
+        // ===== 复制邮箱 =====
         function copyEmail() {
             const email = '3999679973@qq.com';
             if (navigator.clipboard && navigator.clipboard.writeText) {
