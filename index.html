@@ -7,8 +7,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+
     <style>
-        /* ===== 全局重置 & 基础 ===== */
+        /* ============================================================
+                   1. 全局重置 & 基础
+                   ============================================================ */
         * {
             margin: 0;
             padding: 0;
@@ -38,7 +41,9 @@
             padding: 0 24px;
         }
 
-        /* ===== 导航栏 ===== */
+        /* ============================================================
+                   2. 导航栏
+                   ============================================================ */
         .navbar {
             position: sticky;
             top: 0;
@@ -103,7 +108,9 @@
             color: #1e293b;
         }
 
-        /* ===== Hero 区域 ===== */
+        /* ============================================================
+                   3. Hero 区域
+                   ============================================================ */
         .hero {
             padding: 60px 0 80px;
             background: linear-gradient(145deg, #eef5fa 0%, #d9e6f0 100%);
@@ -149,6 +156,7 @@
             flex-wrap: wrap;
             gap: 1rem;
         }
+
         .btn {
             display: inline-block;
             padding: 0.75rem 2rem;
@@ -192,12 +200,6 @@
             box-shadow: 0 8px 20px rgba(0, 161, 214, 0.3);
         }
 
-        .hero-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
         .hero-image .hero-img {
             width: 100%;
             max-width: 480px;
@@ -207,7 +209,9 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         }
 
-        /* ===== 通用 section ===== */
+        /* ============================================================
+                   4. 通用 section
+                   ============================================================ */
         section {
             padding: 70px 0;
         }
@@ -225,7 +229,9 @@
             font-size: 1.1rem;
         }
 
-        /* ===== About 区域 ===== */
+        /* ============================================================
+                   5. About 区域
+                   ============================================================ */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -245,7 +251,7 @@
             text-decoration: underline;
         }
 
-        /* ===== 轮播组件 (关于区域) ===== */
+        /* ---- 关于区域轮播 ---- */
         .carousel-container {
             position: relative;
             width: 100%;
@@ -268,7 +274,6 @@
             transition: opacity 1s ease-in-out;
             border-radius: 20px;
         }
-
         .carousel-slide.active {
             opacity: 1;
         }
@@ -282,7 +287,6 @@
             gap: 10px;
             z-index: 5;
         }
-
         .carousel-indicators .dot {
             width: 10px;
             height: 10px;
@@ -291,20 +295,14 @@
             cursor: pointer;
             transition: background 0.3s, transform 0.2s;
         }
-
         .carousel-indicators .dot.active {
             background: #ffffff;
             transform: scale(1.2);
         }
 
-        @media (max-width: 768px) {
-            .carousel-indicators .dot {
-                width: 8px;
-                height: 8px;
-            }
-        }
-
-        /* ===== 荣誉成果展示（轮播） ===== */
+        /* ============================================================
+                   6. 荣誉成果（轮播）
+                   ============================================================ */
         .achievement-showcase {
             max-width: 800px;
             margin: 0 auto;
@@ -315,7 +313,6 @@
             border: 1px solid #e9eef3;
             transition: box-shadow 0.3s;
         }
-
         .achievement-showcase:hover {
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.10);
         }
@@ -329,7 +326,6 @@
             align-items: center;
             justify-content: center;
         }
-
         .achievement-image img {
             width: 100%;
             height: 100%;
@@ -341,13 +337,11 @@
             padding: 1.8rem 2rem 2rem;
             text-align: center;
         }
-
         .achievement-info h3 {
             font-size: 1.4rem;
             color: #0f2b4b;
             margin-bottom: 0.3rem;
         }
-
         .achievement-info .year {
             display: inline-block;
             background: #e9f0f6;
@@ -358,7 +352,6 @@
             border-radius: 20px;
             margin-bottom: 0.6rem;
         }
-
         .achievement-info .desc {
             color: #475569;
             font-size: 1rem;
@@ -373,7 +366,6 @@
             flex-wrap: wrap;
             padding: 0 1rem 1.5rem;
         }
-
         .achievement-dots .dot {
             width: 10px;
             height: 10px;
@@ -384,12 +376,10 @@
             border: none;
             padding: 0;
         }
-
         .achievement-dots .dot.active {
             background: #1e6f9f;
             transform: scale(1.25);
         }
-
         .achievement-dots .dot:hover {
             background: #1e6f9f;
         }
@@ -406,7 +396,9 @@
             text-decoration: underline;
         }
 
-        /* ===== 赛事概览（列表） ===== */
+        /* ============================================================
+                   7. 赛事概览（列表）
+                   ============================================================ */
         .events-list {
             max-width: 800px;
             margin: 0 auto;
@@ -422,12 +414,10 @@
             transition: all 0.25s ease;
             gap: 1rem;
         }
-
         .event-item:hover {
             color: #1e6f9f;
             border-bottom-color: #1e6f9f;
         }
-
         .event-item:hover .event-arrow {
             transform: translateX(4px);
             color: #1e6f9f;
@@ -440,26 +430,22 @@
             flex-wrap: wrap;
             flex: 1;
         }
-
         .event-item .event-icon {
             font-size: 1.4rem;
             width: 32px;
             flex-shrink: 0;
         }
-
         .event-item .event-name {
             font-weight: 600;
             font-size: 1.05rem;
             color: #0f2b4b;
         }
-
         .event-item .event-years {
             color: #94a3b8;
             font-size: 0.85rem;
             font-weight: 500;
             white-space: nowrap;
         }
-
         .event-item .event-arrow {
             color: #94a3b8;
             transition: transform 0.25s ease, color 0.25s ease;
@@ -475,32 +461,13 @@
             color: #64748b;
             font-size: 0.95rem;
         }
-
         .events-footer strong {
             color: #1e6f9f;
         }
 
-        @media (max-width: 640px) {
-            .event-item {
-                flex-wrap: wrap;
-                padding: 0.8rem 0;
-            }
-            .event-item .event-info {
-                flex-wrap: wrap;
-                gap: 0.3rem 0.6rem;
-            }
-            .event-item .event-name {
-                font-size: 0.95rem;
-            }
-            .event-item .event-years {
-                font-size: 0.8rem;
-            }
-            .event-item .event-arrow {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* ===== 加入我们 ===== */
+        /* ============================================================
+                   8. 加入我们
+                   ============================================================ */
         .join-section {
             background: linear-gradient(135deg, #eef5fa, #d9e6f0);
             border-radius: 32px;
@@ -519,7 +486,6 @@
             max-width: 600px;
             margin: 0 auto 2rem;
         }
-
         .join-section .btn-group {
             display: flex;
             flex-wrap: wrap;
@@ -527,7 +493,9 @@
             gap: 1rem;
         }
 
-        /* ===== 页脚 ===== */
+        /* ============================================================
+                   9. 页脚
+                   ============================================================ */
         .footer {
             background: #0f2b4b;
             color: #cbd5e1;
@@ -555,6 +523,8 @@
             display: flex;
             gap: 1.5rem;
             font-size: 0.9rem;
+            flex-wrap: wrap;
+            align-items: center;
         }
         .footer-links a {
             color: #cbd5e1;
@@ -570,8 +540,171 @@
             color: #94a3b8;
             text-align: center;
         }
+        .footer-bottom a {
+            color: #94a3b8;
+            text-decoration: underline;
+        }
+        .footer-bottom a:hover {
+            color: #fff;
+        }
 
-        /* ===== 响应式 ===== */
+        /* ============================================================
+                   10. 浮动按钮（融合方案：脉冲波纹 + 图片头像 + 拖拽吸附 + 文字标签）
+                   ============================================================ */
+        .float-join-wrapper {
+            position: fixed;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: grab;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            text-decoration: none;
+            touch-action: none;
+        }
+        .float-join-wrapper.dragging {
+            cursor: grabbing;
+            transition: none !important;
+        }
+        .float-join-wrapper.animating {
+            transition: left 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                top 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* ---- 脉冲波纹 ---- */
+        .float-join-pulse {
+            position: relative;
+            width: 84px;
+            height: 84px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .float-join-pulse .ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(124, 58, 237, 0.35);
+            animation: pulseRing 2.8s ease-out infinite;
+            pointer-events: none;
+        }
+        .float-join-pulse .ring:nth-child(1) {
+            animation-delay: 0s;
+        }
+        .float-join-pulse .ring:nth-child(2) {
+            animation-delay: 0.9s;
+        }
+        .float-join-pulse .ring:nth-child(3) {
+            animation-delay: 1.8s;
+        }
+        .float-join-wrapper.dragging .float-join-pulse .ring {
+            animation-play-state: paused;
+        }
+
+        @keyframes pulseRing {
+            0% {
+                width: 84px;
+                height: 84px;
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+                left: 50%;
+                top: 50%;
+            }
+            100% {
+                width: 84px;
+                height: 84px;
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(2.4);
+                left: 50%;
+                top: 50%;
+            }
+        }
+
+        /* ---- 圆形按钮（图片头像） ---- */
+        .float-join-btn {
+            width: 84px;
+            height: 84px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow:
+                0 0 24px rgba(30, 111, 159, 0.35),
+                0 0 48px rgba(124, 58, 237, 0.2),
+                0 0 72px rgba(0, 161, 214, 0.15),
+                inset 0 0 24px rgba(255, 255, 255, 0.08);
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            z-index: 2;
+            will-change: transform;
+            background-color: #1e6f9f;
+            background-blend-mode: normal;
+        }
+        .float-join-btn.fallback {
+            background: linear-gradient(135deg, #1e6f9f 0%, #7c3aed 50%, #00a1d6 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 4s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .float-join-wrapper:not(.dragging):hover .float-join-btn {
+            transform: scale(1.08);
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow:
+                0 0 40px rgba(30, 111, 159, 0.5),
+                0 0 80px rgba(124, 58, 237, 0.35),
+                0 0 120px rgba(0, 161, 214, 0.2),
+                inset 0 0 32px rgba(255, 255, 255, 0.12);
+        }
+        .float-join-wrapper:not(.dragging):hover .float-join-pulse .ring {
+            animation-duration: 1.4s;
+        }
+        .float-join-btn:active {
+            transform: scale(0.92) !important;
+            transition-duration: 0.08s;
+        }
+
+        /* ---- 下方文字标签（始终显示） ---- */
+        .float-join-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: rgba(15, 43, 75, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 4px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            letter-spacing: 0.5px;
+            margin-top: 10px;
+            white-space: nowrap;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            opacity: 1;
+            transform: none;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        .float-join-wrapper:not(.dragging):hover .float-join-label {
+            background: rgba(15, 43, 75, 0.85);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: scale(1.04);
+        }
+
+        /* ============================================================
+                   11. 响应式
+                   ============================================================ */
         @media (max-width: 992px) {
             .hero .container {
                 grid-template-columns: 1fr;
@@ -631,6 +764,60 @@
             .achievement-info h3 {
                 font-size: 1.2rem;
             }
+            .event-item {
+                flex-wrap: wrap;
+                padding: 0.8rem 0;
+            }
+            .event-item .event-info {
+                flex-wrap: wrap;
+                gap: 0.3rem 0.6rem;
+            }
+            .event-item .event-name {
+                font-size: 0.95rem;
+            }
+            .event-item .event-years {
+                font-size: 0.8rem;
+            }
+            .event-item .event-arrow {
+                font-size: 0.9rem;
+            }
+            .carousel-indicators .dot {
+                width: 8px;
+                height: 8px;
+            }
+
+            /* 浮动按钮响应式 */
+            .float-join-pulse {
+                width: 70px;
+                height: 70px;
+            }
+            .float-join-btn {
+                width: 70px;
+                height: 70px;
+            }
+            .float-join-label {
+                font-size: 0.65rem;
+                padding: 3px 12px;
+                margin-top: 8px;
+            }
+            @keyframes pulseRing {
+                0% {
+                    width: 70px;
+                    height: 70px;
+                    opacity: 1;
+                    transform: translate(-50%, -50%) scale(1);
+                    left: 50%;
+                    top: 50%;
+                }
+                100% {
+                    width: 70px;
+                    height: 70px;
+                    opacity: 0;
+                    transform: translate(-50%, -50%) scale(2.4);
+                    left: 50%;
+                    top: 50%;
+                }
+            }
         }
 
         @media (max-width: 480px) {
@@ -644,17 +831,52 @@
             .container {
                 padding: 0 16px;
             }
+            .float-join-pulse {
+                width: 60px;
+                height: 60px;
+            }
+            .float-join-btn {
+                width: 60px;
+                height: 60px;
+            }
+            .float-join-label {
+                font-size: 0.6rem;
+                padding: 2px 10px;
+                margin-top: 6px;
+            }
+            @keyframes pulseRing {
+                0% {
+                    width: 60px;
+                    height: 60px;
+                    opacity: 1;
+                    transform: translate(-50%, -50%) scale(1);
+                    left: 50%;
+                    top: 50%;
+                }
+                100% {
+                    width: 60px;
+                    height: 60px;
+                    opacity: 0;
+                    transform: translate(-50%, -50%) scale(2.4);
+                    left: 50%;
+                    top: 50%;
+                }
+            }
         }
     </style>
 </head>
+
 <body>
-    <!-- ===== 导航栏 ===== -->
+
+    <!-- ============================================================
+    A. 导航栏
+    ============================================================ -->
     <header class="navbar">
         <div class="container">
             <div class="logo">苏州新一科<span>机器人社</span></div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#hero">首页</a></li>
-                <li><a href="#about">关于我们</a></li>
+                <li><a href="about.html">关于我们</a></li>
                 <li><a href="#achievements">荣誉成果</a></li>
                 <li><a href="#events">赛事概览</a></li>
                 <li><a href="join.html" class="nav-cta">加入我们</a></li>
@@ -663,7 +885,9 @@
         </div>
     </header>
 
-    <!-- ===== Hero 区域 ===== -->
+    <!-- ============================================================
+    B. Hero 区域
+    ============================================================ -->
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-text">
@@ -675,13 +899,14 @@
                 </div>
             </div>
             <div class="hero-image">
-                <!-- 已更新为 .png 格式，浏览器可正常渲染 -->
                 <img src="photos/2AE3E4A53F5A57E18FAFCDD68B141C9D.png" alt="苏州新一科机器人社主视觉图" class="hero-img" />
             </div>
         </div>
     </section>
 
-    <!-- ===== 关于我们 ===== -->
+    <!-- ============================================================
+    C. 关于我们
+    ============================================================ -->
     <section id="about">
         <div class="container">
             <h2 class="section-title">关于我们</h2>
@@ -695,20 +920,20 @@
                         我们以"创新、协作、探索"为宗旨，在机器人设计、编程和竞技中不断突破自我。自成立以来，多次在省市级竞赛中斩获佳绩。
                     </p>
                     <p>
-                        <a href="#" class="more-link">了解更多 →</a>
+                        <a href="about.html" class="more-link">了解更多 →</a>
                     </p>
                 </div>
                 <div class="about-image">
-                    <div class="carousel-container">
-                        <!-- 轮播图片（请替换为你的实际图片路径） -->
+                    <div class="carousel-container" id="aboutCarousel">
+                        <!-- 轮播图片（请替换为实际图片路径） -->
                         <div class="carousel-slide active" style="background-image: url('photos/about/photo1.jpeg');"></div>
                         <div class="carousel-slide" style="background-image: url('photos/about/photo2.jpeg');"></div>
                         <div class="carousel-slide" style="background-image: url('photos/about/photo3.jpeg');"></div>
                         <div class="carousel-slide" style="background-image: url('photos/about/photo4.jpeg');"></div>
                         <div class="carousel-slide" style="background-image: url('photos/about/photo5.jpeg');"></div>
                         <div class="carousel-slide" style="background-image: url('photos/about/photo6.jpeg');"></div>
-                        <!-- 轮播指示器（小圆点） -->
-                        <div class="carousel-indicators">
+                        <!-- 指示器 -->
+                        <div class="carousel-indicators" id="aboutIndicators">
                             <span class="dot active" data-index="0"></span>
                             <span class="dot" data-index="1"></span>
                             <span class="dot" data-index="2"></span>
@@ -722,13 +947,14 @@
         </div>
     </section>
 
-    <!-- ===== 荣誉成果（图片轮播） ===== -->
+    <!-- ============================================================
+    D. 荣誉成果（图片轮播）
+    ============================================================ -->
     <section id="achievements" style="background:#f1f6fa;">
         <div class="container">
             <h2 class="section-title">🏆 我们的荣誉</h2>
             <p class="section-subtitle">每一份荣誉都是成长的见证</p>
 
-            <!-- 荣誉展示卡片 -->
             <div class="achievement-showcase" id="achievementShowcase">
                 <div class="achievement-image">
                     <img id="achievementImg" src="photos/achievements/苏州MakeX赛事校园俱乐部联赛活动-MakeX_Challenge乘胜追击-中学组-一等奖.jpeg" alt="奖项图片" />
@@ -738,68 +964,68 @@
                     <span class="year" id="achievementYear">2025</span>
                     <p class="desc" id="achievementDesc">奖项描述</p>
                 </div>
-                <!-- 小圆点指示器 -->
                 <div class="achievement-dots" id="achievementDots"></div>
             </div>
 
             <div class="section-footer">
-                <a href="#" class="more-link">查看全部荣誉 →</a>
+                <a href="#" class="more-link">查看全部荣誉 →（即将上线，敬请期待）</a>
             </div>
         </div>
     </section>
 
-    <!-- ===== 赛事概览 ===== -->
+    <!-- ============================================================
+    E. 赛事概览
+    ============================================================ -->
     <section id="events">
         <div class="container">
             <h2 class="section-title">🏁 赛事概览</h2>
             <p class="section-subtitle">我们征战过的赛场</p>
 
-            <!-- 赛事列表 -->
             <div class="events-list" id="eventsList">
                 <!-- 由 JavaScript 动态渲染 -->
             </div>
 
-            <!-- 底部统计 -->
             <div class="events-footer">
                 <span>累计参加 <strong id="eventCount">0</strong> 项赛事 · 获得 <strong id="honorCount">0</strong> 项荣誉</span>
             </div>
         </div>
     </section>
 
-<!-- ===== 加入我们 ===== -->
-<section id="join">
-    <div class="container">
-        <div class="join-section">
-            <h2>🤝 加入我们，一起造梦！</h2>
-            <p>
-                无论你是零基础的爱好者，还是经验丰富的老手，新一科机器人社都期待你的加入。
-                让我们一起在机器人的世界里探索、创造、成长！
-            </p>
+    <!-- ============================================================
+    F. 加入我们
+    ============================================================ -->
+    <section id="join">
+        <div class="container">
+            <div class="join-section">
+                <h2>🤝 加入我们，一起造梦！</h2>
+                <p>
+                    无论你是零基础的爱好者，还是经验丰富的老手，新一科机器人社都期待你的加入。
+                    让我们一起在机器人的世界里探索、创造、成长！
+                </p>
 
-            <div class="btn-group">
-                <a href="https://www.bilibili.com/video/BV1YVgtzCExd?t=1.2"
-                   target="_blank"
-                   class="btn btn-bilibili">
-                    📺 观看招新视频
-                </a>
-                <a href="join.html" class="btn btn-primary" style="font-size:1.1rem;padding:0.9rem 3rem;">
-                    立即报名
-                </a>
+                <div class="btn-group">
+                    <a href="https://www.bilibili.com/video/BV1YVgtzCExd?t=1.2" target="_blank" class="btn btn-bilibili">
+                        📺 观看招新视频
+                    </a>
+                    <a href="join.html" class="btn btn-primary" style="font-size:1.1rem;padding:0.9rem 3rem;">
+                        立即报名
+                    </a>
+                </div>
+
+                <!-- 招新群二维码 -->
+                <div class="qr-container" style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center;">
+                    <p style="color: #334155; margin-bottom: 0.8rem; font-weight: 500;">📱 扫码加入招新群 · 群号：1097708290</p>
+                    <img src="photos/qrcode_1788588342278.jpg"
+                    alt="2026 机器人社招新群二维码"
+                    style="max-width: 220px; width: 100%; height: auto; border-radius: 16px; border: 4px solid #1e6f9f; box-shadow: 0 8px 20px rgba(0,0,0,0.08);" />
+                </div>
             </div>
-
-            <!-- 新增招新群二维码 -->
-<!-- 二维码区域 – 使用 flex 居中，与 join.html 保持完全一致 -->
-<div class="qr-container" style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center;">
-    <p style="color: #334155; margin-bottom: 0.8rem; font-weight: 500;">📱 扫码加入招新群 · 群号：1097708290</p>
-    <img src="photos/qrcode_1788588342278.jpg" 
-         alt="2026 机器人社招新群二维码" 
-         style="max-width: 220px; width: 100%; height: auto; border-radius: 16px; border: 4px solid #1e6f9f; box-shadow: 0 8px 20px rgba(0,0,0,0.08);" />
-</div>
-            
         </div>
-    </div>
-</section>
-    <!-- ===== 页脚 ===== -->
+    </section>
+
+    <!-- ============================================================
+    G. 页脚
+    ============================================================ -->
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
@@ -810,7 +1036,7 @@
                     <span>📧 邮箱：</span>
                     <a href="mailto:3999679973@qq.com" style="color:#cbd5e1;transition:color 0.2s;">邮件客户端↗</a>
                     <span style="color:#64748b;font-size:0.85rem;">|</span>
-                    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=3999679973@qq.com" target="_blank" style="color:#cbd5e1;transition:color 0.2s;"> QQ邮箱网页版↗</a>
+                    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=3999679973@qq.com" target="_blank" style="color:#cbd5e1;transition:color 0.2s;">QQ邮箱网页版↗</a>
                     <span style="color:#64748b;font-size:0.85rem;">|</span>
                     <span id="emailDisplay" style="cursor:pointer;color:#cbd5e1;user-select:all;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#cbd5e1'" onclick="copyEmail()">📋 复制邮箱号</span>
                 </div>
@@ -823,32 +1049,69 @@
         </div>
     </footer>
 
-    <!-- ===== JavaScript ===== -->
+    <!-- ============================================================
+    H. 浮动按钮（HTML 结构）
+    ============================================================ -->
+    <a href="javascript:void(0)" class="float-join-wrapper" id="floatJoinWrapper" aria-label="加入我们">
+        <div class="float-join-pulse">
+            <span class="ring"></span>
+            <span class="ring"></span>
+            <span class="ring"></span>
+            <span class="float-join-btn" id="floatJoinBtn"></span>
+        </div>
+        <span class="float-join-label">加入我们</span>
+    </a>
+
+    <!-- ============================================================
+    I. JavaScript
+    ============================================================ -->
     <script>
-        // 1. 移动端菜单切换
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            const nav = document.getElementById('navLinks');
-            nav.classList.toggle('open');
+        /* =============================================================
+               1. 平滑滚动 —— 所有以 "#" 开头的内部链接
+               ============================================================= */
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a[href^="#"]');
+            if (!link) return;
+            const href = link.getAttribute('href');
+            if (!href || href === '#') return;
+            const targetId = href;
+            const target = document.querySelector(targetId);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         });
 
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
+        /* =============================================================
+               2. 移动端菜单切换
+               ============================================================= */
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+            link.addEventListener('click', function() {
                 document.getElementById('navLinks').classList.remove('open');
             });
         });
 
-        // 2. 关于区域轮播
+        /* =============================================================
+               3. 关于区域轮播
+               ============================================================= */
         (function() {
-            const slides = document.querySelectorAll('.carousel-slide');
-            const dots = document.querySelectorAll('.carousel-indicators .dot');
-            let currentIndex = 0;
-            let intervalId = null;
+            var container = document.getElementById('aboutCarousel');
+            if (!container) return;
+            var slides = container.querySelectorAll('.carousel-slide');
+            var dots = container.querySelectorAll('.carousel-indicators .dot');
+            if (!slides.length) return;
+
+            var currentIndex = 0;
+            var intervalId = null;
 
             function goToSlide(index) {
                 if (index < 0) index = slides.length - 1;
                 if (index >= slides.length) index = 0;
-                slides.forEach(s => s.classList.remove('active'));
-                dots.forEach(d => d.classList.remove('active'));
+                slides.forEach(function(s) { s.classList.remove('active'); });
+                dots.forEach(function(d) { d.classList.remove('active'); });
                 slides[index].classList.add('active');
                 dots[index].classList.add('active');
                 currentIndex = index;
@@ -863,32 +1126,29 @@
                 intervalId = setInterval(nextSlide, 5000);
             }
 
-            dots.forEach((dot, idx) => {
+            dots.forEach(function(dot, idx) {
                 dot.addEventListener('click', function() {
                     goToSlide(idx);
                     startInterval();
                 });
             });
 
-            if (slides.length > 0) {
-                goToSlide(0);
-                startInterval();
-            }
+            goToSlide(0);
+            startInterval();
 
-            const container = document.querySelector('.carousel-container');
-            if (container) {
-                container.addEventListener('mouseenter', () => {
-                    if (intervalId) clearInterval(intervalId);
-                });
-                container.addEventListener('mouseleave', () => {
-                    startInterval();
-                });
-            }
+            container.addEventListener('mouseenter', function() {
+                if (intervalId) clearInterval(intervalId);
+            });
+            container.addEventListener('mouseleave', function() {
+                startInterval();
+            });
         })();
 
-        // 3. 荣誉成果随机轮播（共 8 个奖项）
+        /* =============================================================
+               4. 荣誉成果轮播（8 个奖项，随机切换）
+               ============================================================= */
         (function() {
-            const awards = [{
+            var awards = [{
                 img: 'photos/achievements/苏州MakeX赛事校园俱乐部联赛活动-MakeX_Challenge乘胜追击-中学组-一等奖.jpeg',
                 title: 'MakeX Challenge 乘胜追击 · 中学组',
                 year: '2025',
@@ -930,19 +1190,19 @@
                 desc: '🥈 二等奖 · 第二十四届江苏省青少年机器人竞赛'
             }];
 
-            const imgEl = document.getElementById('achievementImg');
-            const titleEl = document.getElementById('achievementTitle');
-            const yearEl = document.getElementById('achievementYear');
-            const descEl = document.getElementById('achievementDesc');
-            const dotsContainer = document.getElementById('achievementDots');
+            var imgEl = document.getElementById('achievementImg');
+            var titleEl = document.getElementById('achievementTitle');
+            var yearEl = document.getElementById('achievementYear');
+            var descEl = document.getElementById('achievementDesc');
+            var dotsContainer = document.getElementById('achievementDots');
 
-            let currentIndex = 0;
-            let intervalId = null;
+            var currentIndex = 0;
+            var intervalId = null;
 
             function renderDots() {
                 dotsContainer.innerHTML = '';
-                awards.forEach((_, index) => {
-                    const dot = document.createElement('button');
+                awards.forEach(function(_, index) {
+                    var dot = document.createElement('button');
                     dot.classList.add('dot');
                     if (index === currentIndex) dot.classList.add('active');
                     dot.setAttribute('data-index', index);
@@ -955,15 +1215,15 @@
             }
 
             function updateDisplay(index) {
-                const award = awards[index];
+                var award = awards[index];
                 imgEl.src = award.img;
                 imgEl.alt = award.title;
                 titleEl.textContent = award.title;
                 yearEl.textContent = award.year;
                 descEl.textContent = award.desc;
-
-                document.querySelectorAll('.achievement-dots .dot').forEach((dot, i) => {
-                    dot.classList.toggle('active', i === index);
+                var allDots = dotsContainer.querySelectorAll('.dot');
+                allDots.forEach(function(d, i) {
+                    d.classList.toggle('active', i === index);
                 });
                 currentIndex = index;
             }
@@ -975,7 +1235,7 @@
             }
 
             function randomAward() {
-                let newIndex;
+                var newIndex;
                 do {
                     newIndex = Math.floor(Math.random() * awards.length);
                 } while (awards.length > 1 && newIndex === currentIndex);
@@ -987,24 +1247,26 @@
                 intervalId = setInterval(randomAward, 5000);
             }
 
-            if (awards.length > 0) {
+            if (awards.length) {
                 renderDots();
                 updateDisplay(0);
                 resetInterval();
 
-                const showcase = document.getElementById('achievementShowcase');
-                showcase.addEventListener('mouseenter', () => {
+                var showcase = document.getElementById('achievementShowcase');
+                showcase.addEventListener('mouseenter', function() {
                     if (intervalId) clearInterval(intervalId);
                 });
-                showcase.addEventListener('mouseleave', () => {
+                showcase.addEventListener('mouseleave', function() {
                     resetInterval();
                 });
             }
         })();
 
-        // 4. 赛事概览
+        /* =============================================================
+               5. 赛事概览（动态渲染）
+               ============================================================= */
         (function() {
-            const eventsData = [{
+            var eventsData = [{
                 icon: '⚙️',
                 name: '苏州MakeX赛事校园俱乐部联赛活动',
                 years: '2025',
@@ -1021,63 +1283,54 @@
                 anchor: '#achievements'
             }];
 
-            const container = document.getElementById('eventsList');
-            const eventCountEl = document.getElementById('eventCount');
-            const honorCountEl = document.getElementById('honorCount');
+            var container = document.getElementById('eventsList');
+            var eventCountEl = document.getElementById('eventCount');
+            var honorCountEl = document.getElementById('honorCount');
 
-            // 渲染列表
-            eventsData.forEach(event => {
-                const item = document.createElement('div');
+            eventsData.forEach(function(event) {
+                var item = document.createElement('div');
                 item.className = 'event-item';
                 item.setAttribute('data-anchor', event.anchor);
+                item.innerHTML =
+                    '<div class="event-info">' +
+                    '<span class="event-icon">' + event.icon + '</span>' +
+                    '<span class="event-name">' + event.name + '</span>' +
+                    '</div>' +
+                    '<span class="event-years">' + event.years + '</span>' +
+                    '<span class="event-arrow">→</span>';
 
-                item.innerHTML = `
-                        <div class="event-info">
-                            <span class="event-icon">${event.icon}</span>
-                            <span class="event-name">${event.name}</span>
-                        </div>
-                        <span class="event-years">${event.years}</span>
-                        <span class="event-arrow">→</span>
-                    `;
-
-                // 点击跳转
                 item.addEventListener('click', function() {
-                    const anchor = this.dataset.anchor;
+                    var anchor = this.dataset.anchor;
                     if (anchor && anchor.startsWith('#')) {
-                        const target = document.querySelector(anchor);
+                        var target = document.querySelector(anchor);
                         if (target) {
                             target.scrollIntoView({ behavior: 'smooth' });
                         }
                     }
                 });
-
                 container.appendChild(item);
             });
 
-            // 更新统计
             if (eventCountEl) eventCountEl.textContent = eventsData.length;
             if (honorCountEl) honorCountEl.textContent = 8;
         })();
 
-        // ===== 5. 复制邮箱号功能 =====
+        /* =============================================================
+               6. 复制邮箱号
+               ============================================================= */
         function copyEmail() {
-            const email = '3999679973@qq.com';
-            // 优先使用现代 Clipboard API
+            var email = '3999679973@qq.com';
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(email)
-                    .then(() => {
-                        alert('📋 邮箱地址已复制！');
-                    })
-                    .catch(() => {
-                        fallbackCopy(email);
-                    });
+                    .then(function() { alert('📋 邮箱地址已复制！'); })
+                    .catch(function() { fallbackCopy(email); });
             } else {
                 fallbackCopy(email);
             }
         }
 
         function fallbackCopy(text) {
-            const input = document.createElement('input');
+            var input = document.createElement('input');
             input.value = text;
             document.body.appendChild(input);
             input.select();
@@ -1085,6 +1338,200 @@
             document.body.removeChild(input);
             alert('📋 邮箱地址已复制！');
         }
+
+        /* =============================================================
+               7. 浮动按钮 —— 图片加载 + 拖拽吸附
+               ============================================================= */
+        (function() {
+            var wrapper = document.getElementById('floatJoinWrapper');
+            var btn = document.getElementById('floatJoinBtn');
+            if (!wrapper || !btn) return;
+
+            // 根据页面路径设置正确的图片路径
+            var path = window.location.pathname;
+            var isInMessages = path.includes('/messages/');
+            var encodedFileName = encodeURI('default (4).jpeg');
+            var imgPath = isInMessages ? '../photos/' + encodedFileName : 'photos/' + encodedFileName;
+
+            var img = new Image();
+            img.onload = function() {
+                btn.style.backgroundImage = "url('" + imgPath + "')";
+                btn.classList.remove('fallback');
+            };
+            img.onerror = function() {
+                btn.classList.add('fallback');
+            };
+            img.src = imgPath;
+
+            if (img.complete && img.naturalWidth > 0) {
+                btn.style.backgroundImage = "url('" + imgPath + "')";
+                btn.classList.remove('fallback');
+            }
+
+            // ---- 拖拽逻辑 ----
+            var isDragging = false;
+            var dragStartX = 0,
+                dragStartY = 0;
+            var startLeft = 0,
+                startTop = 0;
+            var hasMoved = false;
+
+            function getBtnSize() {
+                var rect = btn.getBoundingClientRect();
+                return { width: rect.width, height: rect.height };
+            }
+
+            function getViewport() {
+                return { width: window.innerWidth, height: window.innerHeight };
+            }
+
+            function clampPosition(left, top) {
+                var size = getBtnSize();
+                var vp = getViewport();
+                var padding = 16;
+                var minLeft = padding;
+                var maxLeft = vp.width - size.width - padding;
+                var minTop = 60;
+                var maxTop = vp.height - size.height - 60;
+                return {
+                    left: Math.max(minLeft, Math.min(maxLeft, left)),
+                    top: Math.max(minTop, Math.min(maxTop, top))
+                };
+            }
+
+            function snapToEdge(left, top) {
+                var size = getBtnSize();
+                var vp = getViewport();
+                var padding = 20;
+                var center = left + size.width / 2;
+                var snapLeft = center < vp.width / 2 ? padding : vp.width - size.width - padding;
+                var clamped = clampPosition(snapLeft, top);
+                wrapper.classList.add('animating');
+                wrapper.style.left = clamped.left + 'px';
+                wrapper.style.top = clamped.top + 'px';
+                setTimeout(function() { wrapper.classList.remove('animating'); }, 400);
+                return clamped;
+            }
+
+            function initPosition() {
+                var size = getBtnSize();
+                var vp = getViewport();
+                var padding = 36;
+                var left = vp.width - size.width - padding;
+                var top = vp.height - size.height - padding - 30;
+                wrapper.style.left = left + 'px';
+                wrapper.style.top = top + 'px';
+                wrapper.style.right = 'auto';
+                wrapper.style.bottom = 'auto';
+            }
+
+            function updatePosition(left, top) {
+                var clamped = clampPosition(left, top);
+                wrapper.style.left = clamped.left + 'px';
+                wrapper.style.top = clamped.top + 'px';
+                return clamped;
+            }
+
+            function startDrag(clientX, clientY) {
+                var rect = wrapper.getBoundingClientRect();
+                isDragging = true;
+                hasMoved = false;
+                dragStartX = clientX;
+                dragStartY = clientY;
+                startLeft = rect.left;
+                startTop = rect.top;
+                wrapper.classList.add('dragging');
+                wrapper.classList.remove('animating');
+                wrapper.style.transition = 'none';
+            }
+
+            function moveDrag(clientX, clientY) {
+                if (!isDragging) return;
+                var dx = clientX - dragStartX;
+                var dy = clientY - dragStartY;
+                if (Math.abs(dx) > 3 || Math.abs(dy) > 3) hasMoved = true;
+                updatePosition(startLeft + dx, startTop + dy);
+            }
+
+            function endDrag() {
+                isDragging = false;
+                wrapper.classList.remove('dragging');
+                wrapper.style.transition = '';
+                var rect = wrapper.getBoundingClientRect();
+                if (hasMoved) {
+                    snapToEdge(rect.left, rect.top);
+                } else {
+                    window.location.href = 'join.html';
+                }
+                hasMoved = false;
+            }
+
+            // ---- 鼠标事件 ----
+            wrapper.addEventListener('mousedown', function(e) {
+                if (e.button !== 0) return;
+                startDrag(e.clientX, e.clientY);
+                e.preventDefault();
+            });
+            document.addEventListener('mousemove', function(e) {
+                if (!isDragging) return;
+                moveDrag(e.clientX, e.clientY);
+                e.preventDefault();
+            });
+            document.addEventListener('mouseup', function(e) {
+                if (!isDragging) return;
+                endDrag();
+                e.preventDefault();
+            });
+
+            // ---- 触摸事件 ----
+            wrapper.addEventListener('touchstart', function(e) {
+                var touch = e.touches[0];
+                startDrag(touch.clientX, touch.clientY);
+                e.preventDefault();
+            }, { passive: false });
+            document.addEventListener('touchmove', function(e) {
+                if (!isDragging) return;
+                var touch = e.touches[0];
+                moveDrag(touch.clientX, touch.clientY);
+                e.preventDefault();
+            }, { passive: false });
+            document.addEventListener('touchend', function(e) {
+                if (!isDragging) return;
+                endDrag();
+                e.preventDefault();
+            }, { passive: false });
+
+            // ---- 窗口变化 ----
+            var resizeTimeout = null;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(function() {
+                    var rect = wrapper.getBoundingClientRect();
+                    var vp = getViewport();
+                    var size = getBtnSize();
+                    var padding = 20;
+                    var center = rect.left + size.width / 2;
+                    var snapLeft = center < vp.width / 2 ? padding : vp.width - size.width - padding;
+                    var newTop = Math.min(rect.top, vp.height - size.height - 60);
+                    var clamped = clampPosition(snapLeft, Math.max(60, newTop));
+                    wrapper.classList.add('animating');
+                    wrapper.style.left = clamped.left + 'px';
+                    wrapper.style.top = clamped.top + 'px';
+                    setTimeout(function() { wrapper.classList.remove('animating'); }, 400);
+                }, 200);
+            });
+
+            // ---- 初始化 ----
+            if (document.readyState === 'complete') {
+                initPosition();
+            } else {
+                window.addEventListener('load', initPosition);
+            }
+            window.addEventListener('load', function() {
+                setTimeout(initPosition, 100);
+            });
+        })();
     </script>
+
 </body>
 </html>

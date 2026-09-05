@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
     <style>
+        /* ============================================================
+                   全局重置 & 基础
+                   ============================================================ */
         * {
             margin: 0;
             padding: 0;
@@ -31,6 +34,9 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
         }
 
+        /* ============================================================
+                   页头
+                   ============================================================ */
         .header {
             display: flex;
             align-items: center;
@@ -63,6 +69,9 @@
             color: #fff;
         }
 
+        /* ============================================================
+                   日志条目
+                   ============================================================ */
         .log-entry {
             border-left: 4px solid #1e6f9f;
             padding-left: 1.5rem;
@@ -139,7 +148,9 @@
             font-size: 0.9rem;
         }
 
-        /* 响应式 */
+        /* ============================================================
+                   响应式
+                   ============================================================ */
         @media (max-width: 640px) {
             .container {
                 padding: 1.5rem 1rem;
@@ -158,42 +169,176 @@
 </head>
 <body>
     <div class="container">
-        <!-- 页头 -->
+
+        <!-- ============================================================
+        A. 页头
+        ============================================================ -->
         <div class="header">
-            <h1>📋 更新日志 <span>· 代码优化记录</span></h1>
+            <h1>📋 更新日志 <span>· 记录每一次优化</span></h1>
             <a href="index.html" class="back-link">← 返回首页</a>
         </div>
 
-        <!-- 日志条目列表 -->
-        <!-- 请按时间倒序（最新的在上面）添加新条目 -->
+        <!-- ============================================================
+        B. 日志条目列表（按时间倒序排列）
+        ============================================================ -->
 
+        <!-- ===== v1.9.0 · log.html 代码结构优化 ===== -->
+        <div class="log-entry">
+            <div class="meta">
+                <span class="version">v1.9.0</span>
+                <span class="date">2026-09-05</span>
+                <span class="author">@新一计协技术组</span>
+            </div>
+            <div class="title">📋 更新日志页面代码结构优化</div>
+            <div class="description">
+                对 <code>log.html</code> 进行整体代码整理，提升可读性，并新增本次优化记录。
+            </div>
+            <div class="details">
+                <strong>具体改动：</strong><br>
+                • 统一样式表注释风格，按功能分区（全局、页头、日志条目、响应式）<br>
+                • 优化 HTML 结构，添加清晰的注释分隔，便于后续维护<br>
+                • 移除冗余空白行，缩进规范化<br>
+                • 新增本日志条目（v1.9.0），记录本次优化<br>
+                • 保持所有现有日志内容不变，仅调整排版与注释
+            </div>
+        </div>
 
+        <!-- ===== v1.8.0 · 首页代码结构重构 ===== -->
+        <div class="log-entry">
+            <div class="meta">
+                <span class="version">v1.8.0</span>
+                <span class="date">2026-09-05</span>
+                <span class="author">@新一计协技术组</span>
+            </div>
+            <div class="title">🧹 首页代码结构重构与平滑滚动优化</div>
+            <div class="description">
+                全面优化 index.html 代码结构，提升可读性与维护性；统一所有锚点跳转为平滑滚动。
+            </div>
+            <div class="details">
+                <strong>具体改动：</strong><br>
+                • 重构 <code>index.html</code> 代码结构，按功能模块分区（全局重置、导航栏、Hero、通用组件等），提升可读性<br>
+                • 全局启用 <code>scroll-behavior: smooth</code>，所有锚点跳转均为平滑滚动<br>
+                • 统一浮动按钮为融合方案（B+C+D）：保留🤖图标与“加入”文字 + 脉冲波纹 + 霓虹渐变光效 + 拖拽吸附<br>
+                • 浮动按钮下方文字“加入我们”始终显示，不再依赖悬停<br>
+                • 修复导航栏“关于我们”链接指向 <code>about.html</code>，首页“了解更多”同步指向独立页面<br>
+                • 优化导航栏“加入我们”CTA 按钮样式，与全局风格统一<br>
+                • 调整荣誉成果区域“查看全部荣誉”文字，标注“即将上线”<br>
+                • 同步更新 <code>join.html</code> 浮动按钮文字为“立即报名”，点击跳转至报名入口 <code>#apply</code><br>
+                • 修复页面中部分空链接（<code>#</code>）占位，统一为功能性跳转
+            </div>
+        </div>
+
+        <!-- ===== v1.7.1 · 王一帆社长寄语风格更新 ===== -->
+        <div class="log-entry">
+            <div class="meta">
+                <span class="version">v1.7.1</span>
+                <span class="date">2026-09-05</span>
+                <span class="author">@新一计协技术组</span>
+            </div>
+            <div class="title">📜 王一帆社长寄语风格更新</div>
+            <div class="description">
+                优化第一届社长寄语页面，采用代码块风格呈现，并添加社长照片。
+            </div>
+            <div class="details">
+                <strong>具体改动：</strong><br>
+                • 将寄语正文全部整合为深色 IDE 风格代码块，统一视觉语言<br>
+                • 三行引言添加 <code>#</code> 注释符号，符合代码规范<br>
+                • 新增王一帆侧身半身照（<code>photos/王一帆.jpg</code>），替换原有 emoji 头像<br>
+                • 作者卡片改为左侧照片 + 右侧信息布局，更富层次感<br>
+                • 删除代码块右下角多余标签 <code>// founder_legacy.py</code><br>
+                • 整体风格更契合机器人社“编程+机器人”的社团气质
+            </div>
+        </div>
+
+        <!-- ===== v1.7.0 · 社长寄语页面上线 ===== -->
+        <div class="log-entry">
+            <div class="meta">
+                <span class="version">v1.7.0</span>
+                <span class="date">2026-09-05</span>
+                <span class="author">@新一计协技术组</span>
+            </div>
+            <div class="title">📜 社长寄语页面上线</div>
+            <div class="description">
+                新增三位社长的专属寄语页面，采用书信风格设计，展现社团传承精神。
+            </div>
+            <div class="details">
+                <strong>具体改动：</strong><br>
+                • 创建 <code>messages/</code> 文件夹，存放所有寄语页面<br>
+                • 新增 <code>王一帆.html</code> —— 第一届社长（2024-2025）寄语<br>
+                • 新增 <code>王宏轶.html</code> —— 第二届社长（2025-2026）寄语<br>
+                • 新增 <code>沈浩.html</code> —— 第三届社长（2026-2027）寄语<br>
+                • 页面采用“信纸/书信”风格，温暖庄重<br>
+                • 更新 <code>about.html</code> 社长姓名链接，指向对应的寄语页面<br>
+                • 为 <code>about.html</code> 历届社长区域添加锚点 <code>id="leaders"</code><br>
+                • 每个寄语页面包含：社长信息卡、寄语正文、签名落款、返回按钮
+            </div>
+        </div>
+
+        <!-- ===== v1.6.1 · 链接修复与二维码优化 ===== -->
+        <div class="log-entry">
+            <div class="meta">
+                <span class="version">v1.6.1</span>
+                <span class="date">2026-09-05</span>
+                <span class="author">@新一计协技术组</span>
+            </div>
+            <div class="title">🔗 链接修复与二维码优化</div>
+            <div class="description">
+                修复了首页“了解更多”链接的拼写错误，优化招新群二维码的显示效果。
+            </div>
+            <div class="details">
+                <strong>具体改动：</strong><br>
+                • 修复 <code>index.html</code> 中“了解更多”链接拼写错误（<code>anout.html</code> → <code>about.html</code>），现在可正确跳转至关于我们页面<br>
+                • 导航栏“关于我们”链接从锚点 <code>#about</code> 改为独立页面 <code>about.html</code><br>
+                • 修复首页二维码显示比例问题，从固定正方形改为自适应宽高比（<code>height: auto</code>）<br>
+                • 统一 <code>index.html</code> 与 <code>join.html</code> 二维码居中布局，均使用 <code>flex</code> 居中<br>
+                • 二维码最大宽度统一为 <code>220px</code>，确保在不同屏幕下清晰显示
+            </div>
+        </div>
+
+        <!-- ===== v1.6.0 · 界面优化 ===== -->
+        <div class="log-entry">
+            <div class="meta">
+                <span class="version">v1.6.0</span>
+                <span class="date">2026-09-05</span>
+                <span class="author">@新一计协技术组</span>
+            </div>
+            <div class="title">🖼️ 界面优化</div>
+            <div class="description">
+                对部分未完成的部分进行补充优化。
+            </div>
+            <div class="details">
+                <strong>具体改动：</strong><br>
+                • 添加了比赛场地主视图<br>
+                • 添加了社团招新QQ群二维码<br>
+                • 添加了 <code>about.html</code> 页面
+            </div>
+        </div>
+
+        <!-- ===== v1.5.2 · 优化维护 ===== -->
         <div class="log-entry">
             <div class="meta">
                 <span class="version">v1.5.2</span>
                 <span class="date">2026-08-10</span>
                 <span class="author">@新一计协技术组</span>
             </div>
-            <div class="title">优化维护</div>
+            <div class="title">🔧 优化维护</div>
             <div class="description">
-		对加入我们页面内容优化。
+                对加入我们页面内容优化。
             </div>
         </div>
 
-
-        <!-- ===== v1.5.0 新增加入我们页面 ===== -->
-
+        <!-- ===== v1.5.1 · github部署更新 ===== -->
         <div class="log-entry">
             <div class="meta">
                 <span class="version">v1.5.1</span>
                 <span class="date">2026-08-10</span>
                 <span class="author">@新一计协技术组</span>
             </div>
-            <div class="title">github部署更新</div>
-            <div class="description">
-            </div>
+            <div class="title">🚀 GitHub 部署更新</div>
+            <div class="description"></div>
         </div>
 
+        <!-- ===== v1.5.0 · 新增加入我们页面 ===== -->
         <div class="log-entry">
             <div class="meta">
                 <span class="version">v1.5.0</span>
@@ -219,60 +364,64 @@
             </div>
         </div>
 
+        <!-- ===== v1.4.2 · github部署更新 ===== -->
         <div class="log-entry">
             <div class="meta">
                 <span class="version">v1.4.2</span>
                 <span class="date">2026-08-10</span>
                 <span class="author">@新一计协技术组</span>
             </div>
-            <div class="title">github部署更新</div>
+            <div class="title">🚀 GitHub 部署更新</div>
             <div class="description">
-                修复了复制邮箱号时出错，并再次部署更新
+                修复了复制邮箱号时出错，并再次部署更新。
             </div>
         </div>
 
+        <!-- ===== v1.4.1 · github部署更新 ===== -->
         <div class="log-entry">
             <div class="meta">
                 <span class="version">v1.4.1</span>
                 <span class="date">2026-08-10</span>
                 <span class="author">@新一计协技术组</span>
             </div>
-            <div class="title">github部署更新</div>
-            <div class="description">
-            </div>
+            <div class="title">🚀 GitHub 部署更新</div>
+            <div class="description"></div>
         </div>
 
+        <!-- ===== v1.4.0 · 邮箱按钮 ===== -->
         <div class="log-entry">
             <div class="meta">
                 <span class="version">v1.4.0</span>
                 <span class="date">2026-08-10</span>
                 <span class="author">@新一计协技术组</span>
             </div>
-            <div class="title">📮邮箱按钮</div>
+            <div class="title">📮 邮箱按钮</div>
             <div class="description">
-                对邮箱按钮进行了配置
+                对邮箱按钮进行了配置。
             </div>
             <div class="details">
                 <strong>具体改动：</strong><br>
-                • 配置了链接到的邮箱为<code>3999679973@qq.com</code><br>
-                • 修复了部分用户无法使用<code>mailto:</code>的问题<br>
-                • 修复了部分用户未注册<code>QQ邮箱</code>导致无法访问的问题<br>
+                • 配置了链接到的邮箱为 <code>3999679973@qq.com</code><br>
+                • 修复了部分用户无法使用 <code>mailto:</code> 的问题<br>
+                • 修复了部分用户未注册 QQ 邮箱导致无法访问的问题<br>
                 • 新增了复制邮箱号的功能
             </div>
         </div>
 
+        <!-- ===== v1.3.1 · 首次在github部署 ===== -->
         <div class="log-entry">
             <div class="meta">
                 <span class="version">v1.3.1</span>
                 <span class="date">2026-08-10</span>
                 <span class="author">@新一计协技术组</span>
             </div>
-            <div class="title">首次在github部署</div>
+            <div class="title">🌐 首次在 GitHub 部署</div>
             <div class="description">
-                部署网址为<a href="https://tvvc-100618.github.io/sz-xinyike-robotics/">https://tvvc-100618.github.io/sz-xinyike-robotics/</a>
+                部署网址为 <a href="https://tvvc-100618.github.io/sz-xinyike-robotics/" target="_blank">https://tvvc-100618.github.io/sz-xinyike-robotics/</a>
             </div>
         </div>
 
+        <!-- ===== v1.3.0 · 荣誉成果改为图片轮播 ===== -->
         <div class="log-entry">
             <div class="meta">
                 <span class="version">v1.3.0</span>
@@ -295,6 +444,7 @@
             </div>
         </div>
 
+        <!-- ===== v1.2.0 · 招新视频改用跳转按钮 ===== -->
         <div class="log-entry">
             <div class="meta">
                 <span class="version">v1.2.0</span>
@@ -314,6 +464,7 @@
             </div>
         </div>
 
+        <!-- ===== v1.1.0 · 关于区域添加图片轮播 ===== -->
         <div class="log-entry">
             <div class="meta">
                 <span class="version">v1.1.0</span>
@@ -333,12 +484,14 @@
             </div>
         </div>
 
-        <!-- 更多日志可继续追加 -->
-
+        <!-- ============================================================
+        C. 页脚
+        ============================================================ -->
         <div class="footer-note">
             <p>📌 记录每一次成长，让进步有迹可循</p>
             <p style="margin-top:0.3rem;">— 苏州新一科机器人社 · 技术团队 —</p>
         </div>
+
     </div>
 </body>
 </html>

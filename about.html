@@ -3,21 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>加入我们 · 苏州新一科机器人社</title>
+    <title>关于我们 · 苏州新一科机器人社</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
 
     <style>
         /* ============================================================
-                   1. 平滑滚动（全局）
-                   ============================================================ */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* ============================================================
-                   2. 全局重置 & 基础
+                   1. 全局重置 & 基础
                    ============================================================ */
         * {
             margin: 0;
@@ -37,6 +30,11 @@
             color: inherit;
         }
 
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -44,7 +42,7 @@
         }
 
         /* ============================================================
-                   3. 导航栏
+                   2. 导航栏
                    ============================================================ */
         .navbar {
             position: sticky;
@@ -88,6 +86,10 @@
         .nav-links a:hover {
             color: #1e6f9f;
         }
+        .nav-links a.active {
+            color: #1e6f9f;
+            font-weight: 600;
+        }
 
         .nav-cta {
             background: #1e6f9f;
@@ -111,7 +113,7 @@
         }
 
         /* ============================================================
-                   4. 页面标题区
+                   3. 页面标题区
                    ============================================================ */
         .page-header {
             padding: 60px 0 40px;
@@ -133,7 +135,7 @@
         }
 
         /* ============================================================
-                   5. 通用 section
+                   4. 通用 section
                    ============================================================ */
         section {
             padding: 60px 0;
@@ -153,14 +155,30 @@
         }
 
         /* ============================================================
-                   6. 招新亮点（卡片网格）
+                   5. 社团简介
                    ============================================================ */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
+        .intro-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            color: #334155;
+            line-height: 1.8;
         }
-        .benefit-card {
+        .intro-text p {
+            margin-bottom: 1rem;
+        }
+
+        /* ============================================================
+                   6. 文化卡片
+                   ============================================================ */
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .culture-card {
             background: #fff;
             border-radius: 20px;
             padding: 2rem 1.5rem;
@@ -169,123 +187,198 @@
             border: 1px solid #e9eef3;
             transition: transform 0.25s, box-shadow 0.25s;
         }
-        .benefit-card:hover {
+        .culture-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
         }
-        .benefit-card .icon {
+        .culture-card .icon {
             font-size: 2.8rem;
             margin-bottom: 0.5rem;
         }
-        .benefit-card h3 {
+        .culture-card h3 {
             font-size: 1.15rem;
             color: #0f2b4b;
             margin-bottom: 0.3rem;
         }
-        .benefit-card p {
+        .culture-card p {
             color: #64748b;
             font-size: 0.95rem;
         }
 
         /* ============================================================
-                   7. 报名要求
+                   7. 教师卡片
                    ============================================================ */
-        .requirements {
-            background: #f1f6fa;
-            border-radius: 24px;
-            padding: 2.5rem 2rem;
+        .teacher-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
             max-width: 800px;
             margin: 0 auto;
         }
-        .requirements ul {
-            list-style: none;
-            padding: 0;
+        .teacher-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e9eef3;
+            transition: transform 0.25s;
         }
-        .requirements ul li {
-            padding: 0.6rem 0;
-            border-bottom: 1px solid #e2e8f0;
+        .teacher-card:hover {
+            transform: translateY(-4px);
+        }
+        .teacher-card .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 0.8rem;
+            overflow: hidden;
+            background: #d9e6f0;
             display: flex;
-            align-items: flex-start;
-            gap: 0.8rem;
-            font-size: 1rem;
-            color: #1e293b;
-        }
-        .requirements ul li:last-child {
-            border-bottom: none;
-        }
-        .requirements ul li .check {
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
             color: #1e6f9f;
-            font-weight: 700;
-            font-size: 1.2rem;
+        }
+        .teacher-card .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .teacher-card h3 {
+            font-size: 1.1rem;
+            color: #0f2b4b;
+        }
+        .teacher-card .title {
+            color: #1e6f9f;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin: 0.2rem 0 0.5rem;
+        }
+        .teacher-card p {
+            color: #64748b;
+            font-size: 0.9rem;
         }
 
         /* ============================================================
-                   8. FAQ 折叠
+                   8. 技术支持
                    ============================================================ */
-        .faq-list {
-            max-width: 800px;
+        .tech-support {
+            text-align: center;
+            max-width: 600px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-        .faq-item {
             background: #fff;
             border-radius: 16px;
+            padding: 1.5rem 2rem;
             border: 1px solid #e9eef3;
-            overflow: hidden;
-            transition: border-color 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
         }
-        .faq-item:hover {
-            border-color: #cbd5e1;
+        .tech-support .label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.2rem;
         }
-        .faq-question {
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-weight: 600;
+        .tech-support .name {
+            font-size: 1.2rem;
+            font-weight: 700;
             color: #0f2b4b;
-            user-select: none;
-            transition: background 0.2s;
         }
-        .faq-question:hover {
-            background: #f8fafc;
-        }
-        .faq-question .arrow {
-            transition: transform 0.3s;
-            font-size: 1.1rem;
-            color: #94a3b8;
-        }
-        .faq-item.active .faq-question .arrow {
-            transform: rotate(180deg);
-        }
-        .faq-answer {
-            padding: 0 1.5rem 1.2rem 1.5rem;
-            color: #475569;
-            font-size: 0.98rem;
-            display: none;
-        }
-        .faq-item.active .faq-answer {
-            display: block;
+        .tech-support .role {
+            font-size: 0.9rem;
+            color: #1e6f9f;
         }
 
         /* ============================================================
-                   9. 报名入口（CTA）
+                   9. 时间线
                    ============================================================ */
-        .cta-section {
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 2rem;
+            border-left: 3px solid #1e6f9f;
+        }
+        .timeline-item {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.15rem;
+            top: 0.3rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #1e6f9f;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 3px #1e6f9f;
+        }
+        .timeline-item .year {
+            font-weight: 700;
+            color: #1e6f9f;
+            font-size: 1.1rem;
+        }
+        .timeline-item .event {
+            color: #334155;
+            margin-top: 0.2rem;
+        }
+
+        /* ============================================================
+                   10. 历届社长表格
+                   ============================================================ */
+        .leader-table {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e9eef3;
+        }
+        .leader-table table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        .leader-table th {
+            background: #eef5fa;
+            padding: 0.8rem 0;
+            font-weight: 600;
+            color: #0f2b4b;
+        }
+        .leader-table td {
+            padding: 0.7rem 0;
+            border-top: 1px solid #e9eef3;
+            color: #334155;
+        }
+        .leader-table td .name-link {
+            color: #1e6f9f;
+            font-weight: 600;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+        .leader-table td .name-link:hover {
+            color: #155580;
+            text-decoration: underline;
+        }
+
+        /* ============================================================
+                   11. 联系我们（CTA）
+                   ============================================================ */
+        .contact-section {
             background: linear-gradient(135deg, #1e6f9f, #155580);
             border-radius: 32px;
             padding: 4rem 2rem;
             text-align: center;
             color: #fff;
         }
-        .cta-section h2 {
+        .contact-section h2 {
             font-size: 2.2rem;
             margin-bottom: 0.8rem;
         }
-        .cta-section p {
+        .contact-section p {
             font-size: 1.15rem;
             opacity: 0.9;
             max-width: 600px;
@@ -320,15 +413,33 @@
             background: rgba(255, 255, 255, 0.1);
             border-color: #fff;
         }
-        .cta-section .btn-group {
+        .contact-section .btn-group {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 1rem;
         }
+        .contact-section .qr-container {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-section .qr-container p {
+            margin-bottom: 0.8rem;
+            opacity: 0.9;
+        }
+        .contact-section .qr-container img {
+            max-width: 180px;
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            border: 4px solid #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
 
         /* ============================================================
-                   10. 页脚
+                   12. 页脚
                    ============================================================ */
         .footer {
             background: #0f2b4b;
@@ -396,7 +507,7 @@
         }
 
         /* ============================================================
-                   11. 浮动按钮（脉冲波纹 + 图片头像 + 拖拽吸附 + 文字标签）
+                   13. 浮动按钮（脉冲波纹 + 图片头像 + 拖拽吸附 + 文字标签）
                    ============================================================ */
         .float-join-wrapper {
             position: fixed;
@@ -526,9 +637,9 @@
         /* ---- 下方文字标签（始终显示） ---- */
         .float-join-label {
             font-size: 0.75rem;
-            font-weight: 700;
+            font-weight: 600;
             color: #ffffff;
-            background: rgba(15, 43, 75, 0.75);
+            background: rgba(15, 43, 75, 0.7);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             padding: 4px 14px;
@@ -544,13 +655,13 @@
             pointer-events: none;
         }
         .float-join-wrapper:not(.dragging):hover .float-join-label {
-            background: rgba(15, 43, 75, 0.9);
+            background: rgba(15, 43, 75, 0.85);
             border-color: rgba(255, 255, 255, 0.3);
             transform: scale(1.04);
         }
 
         /* ============================================================
-                   12. 响应式
+                   14. 响应式
                    ============================================================ */
         @media (max-width: 768px) {
             .nav-links {
@@ -578,11 +689,11 @@
             .section-title {
                 font-size: 1.6rem;
             }
-            .benefits-grid {
+            .culture-grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .cta-section h2 {
-                font-size: 1.6rem;
+            .teacher-grid {
+                grid-template-columns: 1fr;
             }
             .footer-top {
                 flex-direction: column;
@@ -607,10 +718,6 @@
                 padding: 3px 12px;
                 margin-top: 8px;
             }
-            .float-join-wrapper {
-                bottom: 24px;
-                right: 24px;
-            }
             @keyframes pulseRing {
                 0% {
                     width: 70px;
@@ -632,7 +739,7 @@
         }
 
         @media (max-width: 480px) {
-            .benefits-grid {
+            .culture-grid {
                 grid-template-columns: 1fr;
             }
             .container {
@@ -641,9 +748,16 @@
             .page-header h1 {
                 font-size: 1.6rem;
             }
-            .footer-links {
-                font-size: 0.8rem;
-                gap: 0.4rem;
+            .timeline {
+                padding-left: 1.2rem;
+            }
+            .timeline-item::before {
+                left: -1.35rem;
+                width: 10px;
+                height: 10px;
+            }
+            .tech-support {
+                padding: 1rem;
             }
 
             .float-join-pulse {
@@ -658,10 +772,6 @@
                 font-size: 0.6rem;
                 padding: 2px 10px;
                 margin-top: 6px;
-            }
-            .float-join-wrapper {
-                bottom: 16px;
-                right: 16px;
             }
             @keyframes pulseRing {
                 0% {
@@ -695,7 +805,7 @@
             <div class="logo">苏州新一科<span>机器人社</span></div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">首页</a></li>
-                <li><a href="about.html">关于我们</a></li>
+                <li><a href="about.html" class="active">关于我们</a></li>
                 <li><a href="index.html#achievements">荣誉成果</a></li>
                 <li><a href="index.html#events">赛事概览</a></li>
                 <li><a href="join.html" class="nav-cta">加入我们</a></li>
@@ -709,138 +819,189 @@
     ============================================================ -->
     <div class="page-header">
         <div class="container">
-            <h1>🤖 加入 <span class="highlight">新一科机器人社</span></h1>
-            <p>用代码驱动创新，用机械臂探索未来 —— 我们期待与你同行</p>
+            <h1>📖 关于 <span class="highlight">新一科机器人社</span></h1>
+            <p>以创新为引擎，用代码驱动未来</p>
         </div>
     </div>
 
     <!-- ============================================================
-    C. 招新亮点
+    C. 社团简介
     ============================================================ -->
     <section>
         <div class="container">
-            <h2 class="section-title">🌟 为什么加入我们</h2>
-            <p class="section-subtitle">在这里，你将收获技能、友谊与无限可能</p>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="icon">⚙️</div>
-                    <h3>动手实践</h3>
-                    <p>从零开始设计、搭建、编程自己的机器人</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="icon">🏆</div>
-                    <h3>竞赛机会</h3>
-                    <p>参加 MakeX、WRC 等国内外顶级赛事</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="icon">👥</div>
-                    <h3>团队协作</h3>
-                    <p>与志同道合的伙伴一起分工合作、共同成长</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="icon">🧠</div>
-                    <h3>技能提升</h3>
-                    <p>学习机器人操控、算法编程、机械结构等综合知识</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="icon">🎯</div>
-                    <h3>创新思维</h3>
-                    <p>培养解决问题的能力和工程思维</p>
-                </div>
+            <h2 class="section-title">✨ 社团简介</h2>
+            <div class="intro-text">
+                <p><strong>苏州新一科机器人社</strong>（全称：苏州高新区第一中学科技城校机器人社团）是一个专注于机器人设计、编程与竞技的科技创新类学生社团。</p>
+                <p>社团以 <strong>"创新 · 协作 · 探索"</strong> 为核心宗旨，致力于为热爱科技的同学们提供动手实践、团队协作和竞赛成长的平台。自成立以来，社团成员在省市级机器人竞赛中屡获佳绩，展现了卓越的工程素养与创新精神。</p>
+                <p>社团日常活动涵盖机器人结构搭建、程序算法设计、竞赛策略制定等，并定期组织校内交流、技术培训及校外参赛。我们相信，每一个灵感都值得被实现，每一份热爱都能在这里找到归属。</p>
+                <p style="margin-top: 0.5rem; color: #1e6f9f; font-weight: 500;">—— 用机械臂丈量世界，用代码书写青春</p>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-    D. 报名要求
+    D. 社团文化
     ============================================================ -->
     <section style="background:#f8fafc;">
         <div class="container">
-            <h2 class="section-title">📋 我们需要这样的你</h2>
-            <p class="section-subtitle">不论基础，只要热爱，这里就有你的位置</p>
-            <div class="requirements">
-                <ul>
-                    <li><span class="check">✅</span> <strong>对机器人和科技创新有浓厚兴趣</strong> —— 这是最重要的一点</li>
-                    <li><span class="check">✅</span> <strong>有团队合作精神</strong> —— 我们是一个整体，共同攻克难题</li>
-                    <li><span class="check">✅</span> <strong>具备探索精神和学习热情</strong> —— 愿意主动学习新知识、新技能</li>
-                    <li><span class="check">✅</span> <strong>不限基础</strong> —— 无论你是编程小白还是机械达人，都欢迎加入</li>
-                    <li><span class="check">✅</span> <strong>有责任心</strong> —— 认真对待每一次训练和比赛</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-    E. FAQ 常见问题
-    ============================================================ -->
-    <section style="background:#f8fafc;">
-        <div class="container">
-            <h2 class="section-title">❓ 常见问题</h2>
-            <p class="section-subtitle">你想知道的都在这里</p>
-            <div class="faq-list" id="faqList">
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>🤔 完全没有编程基础，可以加入吗？</span>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">当然可以！我们欢迎所有对机器人感兴趣的同学。入社后会有学长学姐带领学习，从零基础开始，逐步掌握机械操控、编程等技能。</div>
+            <h2 class="section-title">🌟 社团文化</h2>
+            <p class="section-subtitle">我们坚守的价值观</p>
+            <div class="culture-grid">
+                <div class="culture-card">
+                    <div class="icon">💡</div>
+                    <h3>创新</h3>
+                    <p>鼓励打破常规，用创意解决实际问题</p>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>🕐 社团活动时间是怎么安排的？</span>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">常规活动时间为每周五晚饭前的最后一节课后。比赛备战期间会根据需要适当增加训练时间。</div>
+                <div class="culture-card">
+                    <div class="icon">🤝</div>
+                    <h3>协作</h3>
+                    <p>团队分工配合，共同攻克技术难题</p>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>💰 加入社团需要交费吗？</span>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">社团日常训练不收取任何费用。仅比赛收取一定的报名和设备费。</div>
+                <div class="culture-card">
+                    <div class="icon">🔍</div>
+                    <h3>探索</h3>
+                    <p>保持好奇心，不断学习前沿科技</p>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>🏆 社团主要参加哪些比赛？</span>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">我们主要参加 MakeX、WRC 等机器人竞赛，以及省市级青少年科技创新大赛，近年来已获得多项省市级奖项。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>🔧 需要自带电脑或工具吗？</span>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">社团提供机器人套件、工具。如有笔记本电脑，可以在条件允许的情况下携带，在编程方面创造无限潜力。</div>
+                <div class="culture-card">
+                    <div class="icon">⭐</div>
+                    <h3>卓越</h3>
+                    <p>追求极致，在竞赛中突破自我</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-    F. 报名入口（锚点 id="apply"）
+    E. 指导教师
     ============================================================ -->
-    <section id="apply">
+    <section>
         <div class="container">
-            <div class="cta-section">
-                <h2>🤝 加入我们，一起造梦！</h2>
-                <p>无论你是零基础的爱好者，还是经验丰富的老手，新一科机器人社都期待你的加入。</p>
+            <h2 class="section-title">👨‍🏫 指导教师</h2>
+            <p class="section-subtitle">引领我们前行的引路人</p>
+            <div class="teacher-grid">
+                <div class="teacher-card">
+                    <div class="avatar">👩‍🏫</div>
+                    <h3>曹洁婷</h3>
+                    <div class="title">学校信息老师</div>
+                    <p>机器人竞赛指导 · 科技创新教育</p>
+                </div>
+                <div class="teacher-card">
+                    <div class="avatar">
+                        <img src="photos/朱敏.png" alt="朱敏老师" />
+                    </div>
+                    <h3>朱敏</h3>
+                    <div class="title">学校信息老师</div>
+                    <p>机器人竞赛指导 · 科技创新教育</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    F. 历届社长（将王宏轶、沈浩链接改为占位符）
+    ============================================================ -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">👑 历届社长</h2>
+            <p class="section-subtitle">传承与接力 · 点击姓名查看寄语（即将上线，敬请期待）</p>
+            <div class="leader-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>届次</th>
+                            <th>姓名</th>
+                            <th>任期</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>第一届</td>
+                            <td><a href="messages/王一帆.html" class="name-link" title="查看王一帆社长寄语">王一帆</a></td>
+                            <td>2024-2025</td>
+                        </tr>
+                        <tr>
+                            <td>第二届</td>
+                            <td><a href="javascript:void(0)" class="name-link" onclick="alert('王宏轶社长寄语即将上线，敬请期待！')" title="查看王宏轶社长寄语">王宏轶</a></td>
+                            <td>2025-2026</td>
+                        </tr>
+                        <tr>
+                            <td>第三届</td>
+                            <td><a href="javascript:void(0)" class="name-link" onclick="alert('沈浩社长寄语即将上线，敬请期待！')" title="查看沈浩社长寄语">沈浩</a></td>
+                            <td>2026-2027</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    G. 官网技术支持
+    ============================================================ -->
+    <section style="padding-top: 0;">
+        <div class="container">
+            <div class="tech-support">
+                <div class="label">🔧 官网技术支持</div>
+                <div class="name">唐玮岑</div>
+                <div class="role">学生 · 网站开发与维护</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    H. 联系我们
+    ============================================================ -->
+    <section>
+        <div class="container">
+            <div class="contact-section">
+                <h2>📬 联系我们</h2>
+                <p>如有任何疑问或合作意向，欢迎通过以下方式联系我们</p>
                 <div class="btn-group">
-                    <a href="https://docs.qq.com/form/page/DUUpqVEdId0RJRExm" target="_blank" class="btn btn-white">📝 立即报名</a>
-                    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=3999679973@qq.com" target="_blank" class="btn btn-outline-white">📧 邮件咨询</a>
+                    <a href="mailto:3999679973@qq.com" class="btn btn-white">📧 发送邮件</a>
+                    <a href="join.html" class="btn btn-outline-white">🤝 加入我们</a>
                 </div>
-                <div class="qr-container" style="margin-top: 2rem; text-align: center;">
-                    <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 0.8rem;">📱 扫码加入招新群 · 群号：1097708290</p>
-                    <img src="photos/qrcode_1788588342278.jpg"
-                    alt="2026 机器人社招新群二维码"
-                    style="max-width: 220px; width: 100%; height: auto; border-radius: 16px; border: 4px solid #ffffff; box-shadow: 0 8px 20px rgba(0,0,0,0.2);" />
+                <div class="qr-container">
+                    <p>📱 扫码加入招新群 · 群号：1097708290</p>
+                    <img src="photos/qrcode_1788588342278.jpg" alt="2026 机器人社招新群二维码" />
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-    G. 页脚
+    I. 社团大事记
+    ============================================================ -->
+    <section style="background:#f8fafc;">
+        <div class="container">
+            <h2 class="section-title">📅 社团大事记</h2>
+            <p class="section-subtitle">每一步都值得被铭记</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="year">2026</div>
+                    <div class="event">🏆 第二十五届江苏省青少年机器人竞赛 · 二等奖</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2026</div>
+                    <div class="event">🌐 社团官方网站正式上线</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2025</div>
+                    <div class="event">🏆 苏州MakeX赛事校园俱乐部联赛活动 · 一等奖</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2025</div>
+                    <div class="event">🏆 第二十四届江苏省青少年机器人竞赛 · 二等奖</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2024</div>
+                    <div class="event">🚀 社团正式成立</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    J. 页脚
     ============================================================ -->
     <footer class="footer">
         <div class="container">
@@ -860,26 +1021,26 @@
             <div class="footer-bottom">
                 <p>本网站代码版权归社团所有，未经授权不得转载或商用。</p>
                 <p style="margin-top:0.5rem;">Built with ❤️ by 新一科机器人社</p>
-                <p><a href="log.html">更新日志</a></p>
+                <p><a href="log.html" style="color:#94a3b8;text-decoration:underline;">更新日志</a></p>
             </div>
         </div>
     </footer>
 
     <!-- ============================================================
-    H. 浮动按钮（HTML 结构 + JavaScript）
+    K. 浮动按钮（HTML 结构）
     ============================================================ -->
-    <a href="javascript:void(0)" class="float-join-wrapper" id="floatJoinWrapper" aria-label="立即报名">
+    <a href="javascript:void(0)" class="float-join-wrapper" id="floatJoinWrapper" aria-label="加入我们">
         <div class="float-join-pulse">
             <span class="ring"></span>
             <span class="ring"></span>
             <span class="ring"></span>
             <span class="float-join-btn" id="floatJoinBtn"></span>
         </div>
-        <span class="float-join-label">立即报名</span>
+        <span class="float-join-label">加入我们</span>
     </a>
 
     <!-- ============================================================
-    I. JavaScript
+    L. JavaScript
     ============================================================ -->
     <script>
         /* =============================================================
@@ -895,29 +1056,7 @@
         });
 
         /* =============================================================
-               2. FAQ 折叠展开
-               ============================================================= */
-        function toggleFaq(element) {
-            var item = element.parentElement;
-            var isActive = item.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(function(el) {
-                el.classList.remove('active');
-            });
-            if (!isActive) {
-                item.classList.add('active');
-            }
-        }
-
-        // 默认打开第一个 FAQ
-        document.addEventListener('DOMContentLoaded', function() {
-            var firstFaq = document.querySelector('.faq-item');
-            if (firstFaq) {
-                firstFaq.classList.add('active');
-            }
-        });
-
-        /* =============================================================
-               3. 复制邮箱号
+               2. 复制邮箱号
                ============================================================= */
         function copyEmail() {
             var email = '3999679973@qq.com';
@@ -941,7 +1080,7 @@
         }
 
         /* =============================================================
-               4. 浮动按钮 —— 图片加载 + 拖拽吸附
+               3. 浮动按钮 —— 图片加载 + 拖拽吸附
                ============================================================= */
         (function() {
             var wrapper = document.getElementById('floatJoinWrapper');
@@ -1062,8 +1201,7 @@
                 if (hasMoved) {
                     snapToEdge(rect.left, rect.top);
                 } else {
-                    // 点击跳转到报名入口（#apply）
-                    document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
+                    window.location.href = 'join.html';
                 }
                 hasMoved = false;
             }
